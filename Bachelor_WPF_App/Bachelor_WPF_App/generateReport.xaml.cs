@@ -20,7 +20,10 @@ namespace Bachelor_WPF_App
     {
         public generateReport()
         {
+            Console.Write("Hello world");
             InitializeComponent();
         }
     }
 }
+
+        
