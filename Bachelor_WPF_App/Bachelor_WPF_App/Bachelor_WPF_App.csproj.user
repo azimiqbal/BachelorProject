@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="testDatabase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="testIndex.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vehicles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="testDatabase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="testIndex.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vehicles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
