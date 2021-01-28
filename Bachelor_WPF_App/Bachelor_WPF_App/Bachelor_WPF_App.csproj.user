@@ -7,10 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="generateReport.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="testDatabase.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="testIndex.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="testRun.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Vehicles.xaml.cs">
@@ -18,6 +24,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="generateReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -25,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="testIndex.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="testRun.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Vehicles.xaml">
