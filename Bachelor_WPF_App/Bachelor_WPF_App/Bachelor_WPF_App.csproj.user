@@ -12,6 +12,9 @@
     <Compile Update="generateReport.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="testDatabase.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +30,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="generateReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="login.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

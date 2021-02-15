@@ -22,7 +22,7 @@ namespace Bachelor_WPF_App
     {
         public MainWindow()
         {
-            InitializeComponent();   ///SugKUKK
+            InitializeComponent();
         }
     }
 }

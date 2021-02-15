@@ -22,5 +22,30 @@ namespace Bachelor_WPF_App
         {
             InitializeComponent();
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckBox.Content = "Checked";
+        }
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CheckBox.Content = "Unchecked";
+        }
+
+        private void MrCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            MrCheckBox.Content = "Checked";
+        }
+        private void MrCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MrCheckBox.Content = "Unchecked";
+        }
+
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("RANA ASLAM");
+        }
     }
 }
+
