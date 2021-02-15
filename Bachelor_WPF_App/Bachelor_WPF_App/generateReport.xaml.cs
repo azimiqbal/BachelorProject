@@ -23,6 +23,11 @@ namespace Bachelor_WPF_App
             Console.Write("Hello world");
             InitializeComponent();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

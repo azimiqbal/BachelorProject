@@ -8,7 +8,22 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="generateReport">
 
-    <Grid>
-        
+    <Grid RenderTransformOrigin="0.5,0.5" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+        <TextBlock x:Name="slctVec_txt" HorizontalAlignment="Left" Margin="225,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text=""/>
+        <Label Content="Registration Number: " HorizontalAlignment="Left" Margin="39,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Select Vehicle" HorizontalAlignment="Left" Margin="39,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Equipment Notes: " HorizontalAlignment="Left" Margin="39,230,0,0" VerticalAlignment="Top"/>
+        <Label Content="Generate Report" HorizontalAlignment="Left" Margin="39,290,0,0" VerticalAlignment="Top"/>
+        <Label Content="Run Test" HorizontalAlignment="Left" Margin="53,18,0,0" VerticalAlignment="Top"/>
+        <Label Content="Generate Report" HorizontalAlignment="Left" Margin="175,18,0,0" VerticalAlignment="Top"/>
+        <Label Content="Test Databse" HorizontalAlignment="Left" Margin="323,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,0.077"/>
+        <Label Content="Vehice Database" HorizontalAlignment="Left" Margin="481,18,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_start" Content="Start Process " HorizontalAlignment="Left" Margin="457,348,0,0" VerticalAlignment="Top" Height="39" Width="121"/>
+        <RadioButton x:Name="radYes" Content="Yes" HorizontalAlignment="Left" Margin="236,303,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="noRad" Content="No" HorizontalAlignment="Left" Margin="340,304,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="selVec_txt" HorizontalAlignment="Left" Margin="194,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="regNum_txt" HorizontalAlignment="Left" Margin="194,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="eqNot_txt" HorizontalAlignment="Left" Margin="194,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Page>
