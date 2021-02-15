@@ -8,20 +8,25 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Azim\\.nuget\\packages\\": {}
+    "C:\\Users\\bjobo\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\Bachelor_WPF_App\\Bachelor_WPF_App\\Bachelor_WPF_App.csproj",
+      "projectUniqueName": "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\Bachelor_WPF_App\\Bachelor_WPF_App\\Bachelor_WPF_App.csproj",
       "projectName": "Bachelor_WPF_App",
-      "projectPath": "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\Bachelor_WPF_App\\Bachelor_WPF_App\\Bachelor_WPF_App.csproj",
-      "packagesPath": "C:\\Users\\Azim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\Bachelor_WPF_App\\Bachelor_WPF_App\\obj\\",
+      "projectPath": "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\Bachelor_WPF_App\\Bachelor_WPF_App\\Bachelor_WPF_App.csproj",
+      "packagesPath": "C:\\Users\\bjobo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\Bachelor_WPF_App\\Bachelor_WPF_App\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Azim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\bjobo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
