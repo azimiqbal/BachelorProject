@@ -46,7 +46,7 @@ namespace VeiebryggeApplication
         {
             if (IsValid())
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\bjobo\source\repos\VeiebryggeApplication\forsvaret.mdf;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True"))
                 {
                     string query = "SELECT * FROM USERS WHERE UserName = '" + LocalUsernameBox.Text.Trim() +
                         "' AND Password = '" + LocalPasswordBox.Password.Trim() + "'";
@@ -57,7 +57,7 @@ namespace VeiebryggeApplication
                     if (dta.Rows.Count == 1)
                     {
                         NavigationService service = NavigationService.GetNavigationService(this);
-                        service.Navigate(new Uri("testRun.xaml", UriKind.RelativeOrAbsolute));
+                        service.Navigate(new Uri("index.xaml", UriKind.RelativeOrAbsolute));
                     }
                     else
                     {

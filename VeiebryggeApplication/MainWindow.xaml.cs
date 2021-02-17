@@ -25,21 +25,6 @@ namespace VeiebryggeApplication
             InitializeComponent();
         }
 
-        private void BtnMenu1(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Tests();
-        }
-        private void BtnMenu2(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Login();
-        }
-        private void BtnMenu3(object sender, RoutedEventArgs e)
-        {
 
-        }
-        private void BtnMenu4(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
