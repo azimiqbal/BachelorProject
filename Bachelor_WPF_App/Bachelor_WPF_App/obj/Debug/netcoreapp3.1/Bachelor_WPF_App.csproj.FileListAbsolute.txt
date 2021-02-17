@@ -36,3 +36,16 @@ C:\Users\Azim\Documents\GitHub\BachelorProject\Bachelor_WPF_App\Bachelor_WPF_App
 C:\Users\Azim\Documents\GitHub\BachelorProject\Bachelor_WPF_App\Bachelor_WPF_App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Azim\Documents\GitHub\BachelorProject\Bachelor_WPF_App\Bachelor_WPF_App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Azim\Documents\GitHub\BachelorProject\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App.csproj.CopyComplete
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App.csprojAssemblyReference.cache
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\generateReport.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\login.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\testDatabase.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\testIndex.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\testRun.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Vehicles.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App_MarkupCompile.cache
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App_MarkupCompile.lref
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App.pdb

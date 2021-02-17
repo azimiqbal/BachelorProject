@@ -1,0 +1,18 @@
+﻿<Window x:Class="VeiebryggeApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VeiebryggeApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Opacity="0.995">
+            <Button Content="Run test" MinWidth="100" Margin="10,0,0,0" Click="BtnMenu1" Background="#FF979797" Foreground="#FF303030" BorderThickness="1,2,0,2" ClickMode="Press"/>
+            <Button Content="Run diagnostic" MinWidth="100" Margin="0,0,0,0" Click="BtnMenu2" Background="#FF979797" Foreground="#FF303030" BorderThickness="1,2,0,2" ClickMode="Press"/>
+            <Button Content="Test database" MinWidth="100" Margin="0,0,0,0" Click="BtnMenu3" Background="#FF979797" Foreground="#FF303030" BorderThickness="1,2,0,2" ClickMode="Press"/>
+            <Button Content="Vehicle database" MinWidth="100" Margin="0,0,0,0" Click="BtnMenu4" Background="#FF979797" Foreground="#FF303030" BorderThickness="1,2,0,2" ClickMode="Press"/>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="hidden" />
+    </Grid>
+</Window>

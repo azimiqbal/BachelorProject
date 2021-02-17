@@ -41,7 +41,7 @@ namespace Bachelor_WPF_App
         }
     
 
-    private void LocalLoginButton_Click(object sender, RoutedEventArgs e)
+        private void LocalLoginButton_Click(object sender, RoutedEventArgs e)
         {
             if (IsValid())
             {
