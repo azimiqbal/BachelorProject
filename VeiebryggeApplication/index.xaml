@@ -24,13 +24,11 @@
 
 
     <Grid>
-        
+
         <StackPanel Orientation="Vertical" Width="150" Opacity="0.995" HorizontalAlignment="Left" Height="450" VerticalAlignment="Center">
-            <Button Content="--" Background="#FF404040" />
-            <Button Content="Run test" Click="BtnMenu1" Style="{StaticResource menuBtn}"/>
-            <Button Content="Run diagnostic" Click="BtnMenu2" Style="{StaticResource menuBtn}"/>
-            <Button Content="Test database" Click="BtnMenu3" Style="{StaticResource menuBtn}"/>
-            <Button Content="Vehicle database" Click="BtnMenu4" Style="{StaticResource menuBtn}"/>
+            <Button Content="Kjør test" Click="BtnMenu1" Style="{StaticResource menuBtn}"/>
+            <Button Content="Tidligere tester" Click="BtnMenu2" Style="{StaticResource menuBtn}"/>
+            <Button Content="Kjøretøy" Click="BtnMenu3" Style="{StaticResource menuBtn}"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="150,0,0,0" NavigationUIVisibility="hidden" />
     </Grid>

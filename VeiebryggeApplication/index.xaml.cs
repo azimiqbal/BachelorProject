@@ -27,19 +27,15 @@ namespace VeiebryggeApplication
 
         private void BtnMenu1(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Tests();
+            Main.Content = new RunTest();
         }
         private void BtnMenu2(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Login();
+            Main.Content = new Tests();
         }
         private void BtnMenu3(object sender, RoutedEventArgs e)
         {
-
-        }
-        private void BtnMenu4(object sender, RoutedEventArgs e)
-        {
-
+            Main.Content = new Login();
         }
     }
 }
