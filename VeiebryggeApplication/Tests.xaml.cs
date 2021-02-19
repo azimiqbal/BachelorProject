@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace VeiebryggeApplication
 {
@@ -23,8 +25,32 @@ namespace VeiebryggeApplication
         public Tests()
         {
             InitializeComponent();
+            FillDataGrid();
         }
 
+        private void FillDataGrid()
+
+        {
+            string CmdString = string.Empty;
+
+            using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True"))
+            {
+
+                CmdString = "SELECT testID, regNr, weight, rolloverAngle FROM Tests";
+
+                SqlCommand cmd = new SqlCommand(CmdString, conn);
+
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable("Test");
+
+                sda.Fill(dt);
+
+                grdTests.ItemsSource = dt.DefaultView;
+
+            }
+
+        }
 
     }
 }
