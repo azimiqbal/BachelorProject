@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace VeiebryggeApplication
 {
@@ -23,11 +26,24 @@ namespace VeiebryggeApplication
         public RunTest()
         {
             InitializeComponent();
+
+        }
+
+        private void SubmitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("DEEZ");
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("NUTS");
+        }
 
+
+
+        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
