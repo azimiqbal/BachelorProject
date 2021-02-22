@@ -28,22 +28,24 @@ namespace VeiebryggeApplication
             InitializeComponent();
 
         }
+        
 
-        private void SubmitBtn_Click(object sender, RoutedEventArgs e)
+        private void Diagnostics_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("DEEZ");
         }
 
-        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        private void Run_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("NUTS");
         }
 
 
 
-        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
+        private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("ok");
         }
     }
 }
+

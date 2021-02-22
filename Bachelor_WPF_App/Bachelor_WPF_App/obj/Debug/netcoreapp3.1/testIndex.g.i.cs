@@ -53,7 +53,7 @@ namespace Bachelor_WPF_App {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Bachelor_WPF_App;V1.0.0.0;component/testindex.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Bachelor_WPF_App;component/testindex.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\testIndex.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

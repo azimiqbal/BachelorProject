@@ -8,8 +8,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RunTest" Background="white">
-   
-    
+
+
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,41 +34,31 @@
         </Grid.RowDefinitions>
 
 
-            <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="SemiBold" Margin="140,20,20,20" Text="Run test" FontSize="40"/>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="SemiBold" Margin="140,20,20,20" Text="Run test" FontSize="40"/>
+        <DataGrid Name="grdVehicles" />
 
-
-        <TextBlock Grid.Column="1" Grid.Row="4" FontWeight="SemiBold" Margin="20,20,20,20"
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Margin="20,20,20,20"
             Text="Registration number:" FontFamily="Segoe UI" />
-        <Border Margin="8" Grid.Column="2" Grid.Row="4"
+        <Button x:Name="SearchButton" Click="Search_Button_Click" Content="Search" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Width="77" Height="35"/>
+
+        <!--<Border Margin="8" Grid.Column="2" Grid.Row="2"
                 Width="180" 
                 Height="60">
             <Grid Margin="0,0,0,8">
-                <TextBox Name="TextBox" input:AutoCompleteBox.TextChanged="TextBox_TextChanged" Background="Transparent" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="36" Width="150" TabIndex="5" />
+                <TextBox Name="TextBox" Background="Transparent" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="26" Width="120" TabIndex="5" />
             </Grid>
-        </Border>
+        </Border> -->
 
-
-
-        <TextBlock Grid.Column="1" Grid.Row="5" FontWeight="SemiBold" Margin="20,20,20,20"
-            Text="Vehicles:" FontFamily="Segoe UI" />
-        <ComboBox x:Name="myComboBox" Grid.Column="2" Grid.Row="5" Margin="10,20,20,20">
-            <ComboBoxItem Content="Select vehicle" IsSelected="True"></ComboBoxItem>
-            <ComboBoxItem Content="Toyota Avensis"></ComboBoxItem>
-            <ComboBoxItem Content="Nissan Micra"></ComboBoxItem>
-            <ComboBoxItem Content="Audi R8"></ComboBoxItem>
-        </ComboBox>
-
-
-        <TextBlock Grid.Column="1" Grid.Row="6" FontWeight="SemiBold" Margin="20,20,20,20"
+        <TextBlock Grid.Column="1" Grid.Row="3" FontWeight="SemiBold" Margin="20,20,20,20"
             Text="Equipment:" FontFamily="Segoe UI" />
-        <Border Margin="8" Grid.Column="2" Grid.Row="6"
+        <Border Margin="8" Grid.Column="2" Grid.Row="3"
                 Width="160" 
                 Height="60">
-            <TextBox Background="Transparent" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="TextBox2" Height="36" Width="150" TabIndex="5" />
+            <TextBox Background="Transparent" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="TextBox2" Height="57" Width="160" TabIndex="5" />
         </Border>
 
 
-        <Button x:Name="SubmitBtn" Click="SubmitBtn_Click" Content="Run diagnostics" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3" Width="120" Padding="20,20,20,20" Margin="20,20,20,20"/>
-        <Button x:Name="SubmitButton" Click="SubmitButton_Click" Content="Run test" Grid.Column="4" Grid.Row="7" Width="120" Padding="20,20,20,20" Margin="40,20,20,20"/>
+        <Button x:Name="DiagnosticsButton" Click="Diagnostics_Button_Click" Content="Run diagnostics" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Width="120" Padding="20,20,20,20" Margin="20,20,20,20"/>
+        <Button x:Name="RunButton" Click="Run_Button_Click" Content="Run test" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Width="120" Padding="20,20,20,20" Margin="40,20,20,20"/>
     </Grid>
 </Page>

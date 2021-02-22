@@ -74,3 +74,5 @@ C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\r
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.csproj.CopyComplete
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\regnr.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\regnr.baml

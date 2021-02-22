@@ -49,3 +49,5 @@ C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App_MarkupCompile.lref
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App.dll
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\Bachelor_WPF_App\Bachelor_WPF_App\obj\Debug\netcoreapp3.1\Bachelor_WPF_App.pdb
+C:\Users\Azim\Documents\GitHub\BachelorProject\Bachelor_WPF_App\Bachelor_WPF_App\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\Azim\Documents\GitHub\BachelorProject\Bachelor_WPF_App\Bachelor_WPF_App\bin\Debug\netcoreapp3.1\EntityFramework.dll

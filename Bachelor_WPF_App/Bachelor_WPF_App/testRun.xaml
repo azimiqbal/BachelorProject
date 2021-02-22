@@ -43,19 +43,10 @@
                 <TextBox Background="Transparent" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="TextBox" Height="36" Width="150" TabIndex="5" />
             </Grid>
         </Border>
-        
-       
+        <Button x:Name="Sbmt_Button" Click="Sbmt_Button_Click" Content="Search" Grid.Column="4" Grid.Row="2" Width="120" Height="90" Padding="20,20,20,20"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="3" FontWeight="SemiBold" Margin="20,20,20,20"
-            Text="Vehicles:" FontFamily="Segoe UI" />
-        <ComboBox x:Name="myComboBox" Grid.Column="2" Grid.Row="3" Margin="10,20,20,20">
-            <ComboBoxItem Content="Select vehicle" IsSelected="True"></ComboBoxItem>
-            <ComboBoxItem Content="Toyota Avensis"></ComboBoxItem>
-            <ComboBoxItem Content="Nissan Micra"></ComboBoxItem>
-            <ComboBoxItem Content="Audi R8"></ComboBoxItem>
-        </ComboBox>
-  
-        
+
+
         <TextBlock Grid.Column="1" Grid.Row="4" FontWeight="SemiBold" Margin="20,20,20,20"
             Text="Equipment:" FontFamily="Segoe UI" />
         <Border Margin="8" Grid.Column="2" Grid.Row="4"
@@ -67,16 +58,7 @@
         </Border>
 
     
-        <TextBlock Grid.Column="1" Grid.Row="5" FontWeight="SemiBold" Margin="20,10,20,20" 
-            Text="Generate report:" FontFamily="Segoe UI" />
-        <RadioButton Name="CheckBox" Grid.Column="2" Grid.Row="5" Foreground="Black"  
-           Canvas.Left="20" Canvas.Top="10" Content="Yes"  
-           FontFamily="Georgia" FontSize="20" FontWeight="Bold" Margin="50,22,5,3" >
-        </RadioButton>
-        <RadioButton Name="MrCheckBox" Grid.Column="3" Grid.Row="5" Foreground="Black"  
-           Canvas.Left="20" Canvas.Top="10" Content="No"  
-           FontFamily="Georgia" FontSize="20" FontWeight="Bold" Margin="-2,20,5,5" >
-        </RadioButton>
+      
 
         <Button x:Name="SubmitButton" Click="SubmitButton_Click" Content="Run test" Grid.Column="4" Grid.Row="3" Width="150" Padding="20,20,20,20"/>
     
