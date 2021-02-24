@@ -19,8 +19,6 @@
 
                     <DataGridTextColumn Header="Name of vehicle" Width="100" Binding="{Binding vehicleName}"/>
 
-                    <DataGridTextColumn Header="Equipment" Width="100" Binding="{Binding equipment}"/>
-                    
                     <DataGridTextColumn Header="Number of wheels" Width="110" Binding="{Binding boolWheels}"/>
 
                     <DataGridTextColumn Header="Year" Width="60" Binding="{Binding year}"/>
@@ -28,19 +26,17 @@
                 </DataGrid.Columns>
 
             </DataGrid>
-            <TextBox Name="regText" HorizontalAlignment="Left" Height="23" Margin="345,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Registration number" HorizontalAlignment="Left" Margin="182,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
-            <TextBox Name="nameText" HorizontalAlignment="Left" Height="23" Margin="345,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Name="wheelsText" HorizontalAlignment="Left" Height="23" Margin="345,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Name="yearText" HorizontalAlignment="Left" Height="23" Margin="345,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-            <TextBox x:Name="equipmentText" HorizontalAlignment="Left" Height="23" Margin="345,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Year" HorizontalAlignment="Left" Margin="182,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
-            <Label Content="Number of wheels" HorizontalAlignment="Left" Margin="182,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
-            <Label Content="Name of vehicle" HorizontalAlignment="Left" Margin="182,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
-            <Label Content="Equipment" HorizontalAlignment="Left" Margin="182,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
-            <Button Content="Search" HorizontalAlignment="Left" Margin="555,70,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button Content="Insert" HorizontalAlignment="Left" Margin="555,129,0,0" VerticalAlignment="Top" Width="75" Click="Insert_Button_Click"/>
-            <Button Content="Update" HorizontalAlignment="Left" Margin="680,102,0,0" VerticalAlignment="Top" Width="75" Click="Load_Button_Click"/>
+            <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="345,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="regText_TextChanged" TextInput="regText_Input"/>
+            <Label Content="Registration number" HorizontalAlignment="Left" Margin="170,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
+            <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="345,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="345,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.458,1.13"/>
+            <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="345,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+            <Label Content="Year" HorizontalAlignment="Left" Margin="200,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
+            <Label Content="Number of wheels" HorizontalAlignment="Left" Margin="170,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
+            <Label Content="Name of vehicle" HorizontalAlignment="Left" Margin="170,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5"/>
+            <Button Content="Search" HorizontalAlignment="Left" Margin="680,119,0,0" VerticalAlignment="Top" Width="75" Click="Search_Button_Click"/> 
+            <Button Content="Insert" HorizontalAlignment="Left" Margin="545,119,0,0" VerticalAlignment="Top" Width="75" Click="Insert_Button_Click"/>
+           <!-- <Button Content="Update" HorizontalAlignment="Left" Margin="555,63,0,0" VerticalAlignment="Top" Width="75" Click="Update_Button_Click"/> -->
 
         </Grid>
     </Grid>

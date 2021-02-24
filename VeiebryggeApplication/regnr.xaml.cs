@@ -15,6 +15,10 @@ using System.Windows.Shapes;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using System.ComponentModel;
+using System.Drawing;
+
 
 namespace VeiebryggeApplication
 {
@@ -26,20 +30,213 @@ namespace VeiebryggeApplication
         public regnr()
         {
             InitializeComponent();
-            //FillDataGrid();
+            FillDataGrid();
         }
 
-        string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True";
+        const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True";
+
+        
+        private void FillDataGrid()
+        {
+            string CmdString = string.Empty;
+            using (SqlConnection conn = new SqlConnection(dbConnectionString))
+            {
+
+                CmdString = "SELECT regNr, vehicleName, boolWheels, year FROM Vehicles";
+                SqlCommand cmd = new SqlCommand(CmdString, conn);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Vehicles");
+                sda.Fill(dt);
+                grdVehicles.ItemsSource = dt.DefaultView;
+            }
+        }
 
 
+        private void Insert_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsValid())
+            {
+                SqlConnection conn = new SqlConnection(dbConnectionString);
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO Vehicles (regNr, vehicleName, boolWheels, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + this.wheelsText.Text + "','" + this.yearText.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data is saved successfully");
+                    FillDataGrid();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                } 
+            }
+        }
 
-        private void Load_Button_Click(object sender, RoutedEventArgs e)
+
+        private bool IsValid()
+        {
+            if (regText.Text.TrimStart() == string.Empty)
+            {
+                MessageBox.Show("Error! Please enter a valid registration number");
+                return false;
+            }
+            else if (nameText.Text.TrimStart() == string.Empty)
+            {
+                MessageBox.Show("Error! Please enter a valid vehicle name");
+                return false;
+            }
+            else if (wheelsText.Text.TrimStart() == string.Empty)
+            {
+                MessageBox.Show("Error! Please enter the number of wheels on the vehicle");
+                return false;
+            }
+            else if (yearText.Text.TrimStart() == string.Empty)
+            {
+                MessageBox.Show("Error! Please enter a valid year");
+                return false;
+            }
+            return true;
+        }
+
+        private void regText_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void yearText_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void nameText_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^a-æ,ø,å]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void wheelsText_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        public void searchData(string valuetoSearch)
+        {
+            using (SqlConnection conn = new SqlConnection(dbConnectionString))
+            {
+                string query = "SELECT * FROM Vehicles WHERE CONCAT(`regNr`, `vehicleName`, `boolWheels`, `year`) like '%" + valuetoSearch + "%'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Vehicles");
+                sda.Fill(dt);
+                grdVehicles.ItemsSource = dt.DefaultView;
+            }
+        }
+
+
+        private void Search_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("deez");
+        }
+        /*
+        private void Search_Button_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(dbConnectionString);
+            conn.Open();
+
+            string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regText.Text);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.Read())
+            {
+                nameText.Text = sdr["vehicleName"].ToString();
+                wheelsText.Text = sdr["boolWheels"].ToString();
+                yearText.Text = sdr["year"].ToString();
+            }
+            else
+            {
+                regText.Text = "";
+                nameText.Text = "";
+                wheelsText.Text = "";
+                yearText.Text = "";
+                MessageBox.Show("No Data For This Id");
+            }
+            conn.Close();
+        }
+        */
+        private void regText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+         /*   try {
+                SqlConnection conn = new SqlConnection(dbConnectionString);
+                conn.Open();
+                string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regText.Text);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                if (sdr.Read())
+                {
+                    nameText.Text = sdr["vehicleName"].ToString();
+                    wheelsText.Text = sdr["boolWheels"].ToString();
+                    yearText.Text = sdr["year"].ToString();
+                }
+                else
+                {
+                    regText.Text = "";
+                    nameText.Text = "";
+                    wheelsText.Text = "";
+                    yearText.Text = "";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
+
+        private void regText_Input(object sender, TextCompositionEventArgs e)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dbConnectionString);
+                conn.Open();
+                string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regText.Text);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                if (sdr.Read())
+                {
+                    nameText.Text = sdr["vehicleName"].ToString();
+                    wheelsText.Text = sdr["boolWheels"].ToString();
+                    yearText.Text = sdr["year"].ToString();
+                }
+                else
+                {
+                    regText.Text = "";
+                    nameText.Text = "";
+                    wheelsText.Text = "";
+                    yearText.Text = "";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    
+
+
+        /*
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection conn = new SqlConnection(dbConnectionString);
             try
             {
                 conn.Open();
-                string query = "SELECT regNr, vehicleName, equipment, boolWheels, year FROM Vehicles ";
+                string query = "SELECT regNr, vehicleName, boolWheels, year FROM Vehicles ";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
 
@@ -55,84 +252,7 @@ namespace VeiebryggeApplication
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-        private void Insert_Button_Click(object sender, RoutedEventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(dbConnectionString);
-            try
-            {
-                conn.Open();
-                string query = "INSERT INTO Vehicles (regNr, vehicleName, equipment, boolWheels, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + this.equipmentText.Text + "','" + this.wheelsText.Text + "','" + this.yearText.Text + "')";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data is saved successfully");
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-        
-    
-        
-        
-        /*
-        private void FillDataGrid()
-
-        {
-            string CmdString = string.Empty;
-
-            using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True"))
-            {
-
-                CmdString = "SELECT regNr, vehicleName, boolWheels, year, equipment FROM Vehicles";
-
-                SqlCommand cmd = new SqlCommand(CmdString, conn);
-
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-
-                DataTable dt = new DataTable("Test");
-
-                sda.Fill(dt);
-
-                grdVehicles.ItemsSource = dt.DefaultView;
-
-            }
-        }
-        */
-        /*
-        private void Button_Insert_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True"))
-            {
-                SqlCommand cmd;
-
-                if (regText.Text != "")
-                {
-                    foreach (DataRow dr in ds.grdVehicles.Columns)
-                    {
-                        cmd = new SqlCommand("INSERT INTO Vehicles(regNr, vehicleName, boolWheels, year, equipment) values(@regNr,@vehicleName,@boolWheels,@year,@equipment)", con);
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@regNr", regText.Text);
-                    cmd.Parameters.AddWithValue("@vehicleName", nameText.Text);
-                    cmd.Parameters.AddWithValue("@boolWheels", wheelsText.Text);
-                    cmd.Parameters.AddWithValue("@year", yearText.Text);
-                    cmd.Parameters.AddWithValue("@equipment", equipmentText.Text);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Record Inserted Successfully");
-                    FillDataGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Please Provide Details!");
-                }
-            }
-        }
         */
     }
 }
+
