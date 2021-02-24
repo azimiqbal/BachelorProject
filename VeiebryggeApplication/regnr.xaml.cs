@@ -147,6 +147,25 @@ namespace VeiebryggeApplication
 
         }
 
+        private void Delete_Button_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(dbConnectionString);
+            try
+            {
+                conn.Open();
+                string query = "DELETE FROM Vehicles WHERE regNr='" + this.regText.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted");
+                FillDataGrid();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void regText_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
