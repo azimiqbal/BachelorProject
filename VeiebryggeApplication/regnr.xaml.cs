@@ -140,39 +140,20 @@ namespace VeiebryggeApplication
 
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("deez");
-        }
-        /*
-        private void Search_Button_Click(object sender, RoutedEventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(dbConnectionString);
-            conn.Open();
+            while (1 == 1)
+            {
+                MessageBox.Show("MOREN DIN ER EN HOMOFIL MANN ;)");
+            }
 
-            string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regText.Text);
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataReader sdr = cmd.ExecuteReader();
-            if (sdr.Read())
-            {
-                nameText.Text = sdr["vehicleName"].ToString();
-                wheelsText.Text = sdr["boolWheels"].ToString();
-                yearText.Text = sdr["year"].ToString();
-            }
-            else
-            {
-                regText.Text = "";
-                nameText.Text = "";
-                wheelsText.Text = "";
-                yearText.Text = "";
-                MessageBox.Show("No Data For This Id");
-            }
-            conn.Close();
         }
-        */
+
         private void regText_TextChanged(object sender, TextChangedEventArgs e)
         {
-         /*   try {
+            try
+            {
                 SqlConnection conn = new SqlConnection(dbConnectionString);
                 conn.Open();
+
                 string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regText.Text);
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -184,7 +165,6 @@ namespace VeiebryggeApplication
                 }
                 else
                 {
-                    regText.Text = "";
                     nameText.Text = "";
                     wheelsText.Text = "";
                     yearText.Text = "";
@@ -193,66 +173,9 @@ namespace VeiebryggeApplication
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-
-        private void regText_Input(object sender, TextCompositionEventArgs e)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(dbConnectionString);
-                conn.Open();
-                string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regText.Text);
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader sdr = cmd.ExecuteReader();
-                if (sdr.Read())
-                {
-                    nameText.Text = sdr["vehicleName"].ToString();
-                    wheelsText.Text = sdr["boolWheels"].ToString();
-                    yearText.Text = sdr["year"].ToString();
-                }
-                else
-                {
-                    regText.Text = "";
-                    nameText.Text = "";
-                    wheelsText.Text = "";
-                    yearText.Text = "";
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
-    
 
-
-        /*
-        private void Update_Button_Click(object sender, RoutedEventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(dbConnectionString);
-            try
-            {
-                conn.Open();
-                string query = "SELECT regNr, vehicleName, boolWheels, year FROM Vehicles ";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("Vehicles");
-                sda.Fill(dt);
-                grdVehicles.ItemsSource = dt.DefaultView;
-                sda.Update(dt);
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        */
     }
 }
 
