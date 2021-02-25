@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.ComponentModel;
+using System.Drawing;
 
 namespace VeiebryggeApplication
 {
@@ -37,6 +41,27 @@ namespace VeiebryggeApplication
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BtnMenu3(object sender, RoutedEventArgs e)
+        {
+            using (PdfDocument document = new PdfDocument())
+            {
+                //Add a page to the document
+                PdfPage page = document.Pages.Add();
+
+                //Create PDF graphics for a page
+                PdfGraphics graphics = page.Graphics;
+
+                //Set the standard font
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+                //Draw the text
+                graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+                //Save the document
+                document.Save("Output.pdf");
+            }
         }
     }
 }

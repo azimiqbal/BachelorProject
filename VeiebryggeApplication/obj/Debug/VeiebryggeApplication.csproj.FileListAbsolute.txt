@@ -76,7 +76,7 @@ C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\z
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.csproj.CopyComplete
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\regnr.g.cs
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\regnr.baml
-C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\forsvaret_log.ldf
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.csprojAssemblyReference.cache
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.csproj.ResolveComReference.cache
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\index.g.cs
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\Login.g.cs
@@ -89,14 +89,20 @@ C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debu
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication_MarkupCompile.cache
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication_MarkupCompile.lref
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\forsvaret.mdf
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\forsvaret_log.ldf
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\VeiebryggeApplication.exe.config
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\VeiebryggeApplication.exe
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\VeiebryggeApplication.pdb
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\EntityFramework.dll
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\Syncfusion.Pdf.Base.dll
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\System.Data.SqlClient.dll
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\EntityFramework.xml
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\Syncfusion.Pdf.Base.xml
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\System.Data.SqlClient.xml
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\index.baml
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\Login.baml
@@ -111,4 +117,3 @@ C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debu
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.csproj.CopyComplete
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.exe
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.pdb
-C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\VeiebryggeApplication.csprojAssemblyReference.cache
