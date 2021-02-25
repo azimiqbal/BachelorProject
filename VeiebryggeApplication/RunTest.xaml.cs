@@ -27,6 +27,7 @@ namespace VeiebryggeApplication
         public RunTest()
         {
             InitializeComponent();
+            PopUp.Height = 0;
 
         }
         const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True";
@@ -60,7 +61,8 @@ namespace VeiebryggeApplication
                 }
                 else
                 {
-                   PopUp.Content = new regnr();
+                    PopUp.Height = 400;
+                    PopUp.Content = new regnr();
 
                 }
                 conn.Close();

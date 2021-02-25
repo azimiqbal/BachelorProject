@@ -36,8 +36,8 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="703,305,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="White"/>
-        <Button Content="Export test to excel" HorizontalAlignment="Left" Margin="521,305,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="703,305,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Export test to excel" HorizontalAlignment="Left" Margin="521,305,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
     </Grid>
 
 </Page>

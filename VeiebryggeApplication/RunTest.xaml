@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:VeiebryggeApplication"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RunTest" Background="white">
+      Title="RunTest" Background="#FF404040">
 
 
 
@@ -34,26 +34,26 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock Grid.Column="1" Grid.Row="1" FontWeight="SemiBold" Margin="140,20,20,20" Text="Run test" FontSize="40"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" FontWeight="SemiBold" Margin="140,20,20,20" Text="Run test" FontSize="40" Foreground="White"/>
 
         <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Margin="20,20,20,20"
-            Text="Registration number:" FontFamily="Segoe UI" />
-        <TextBox Background="Transparent" Grid.Column="2" Grid.Row="2" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" x:Name="regNrText" Height="30" Width="140" LostFocus="regNr_LostFocus" />
+            Text="Registration number:" FontFamily="Segoe UI" Foreground="White" />
+        <TextBox Background="Transparent" Grid.Column="2" Grid.Row="2" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" x:Name="regNrText" Height="30" Width="140" LostFocus="regNr_LostFocus" Foreground="White" />
         <TextBlock Grid.Column="4" Name="outputText" Grid.Row="2" FontWeight="SemiBold" Margin="60,20,90,20"
-            Text="Vehicle info: Not Found" FontFamily="Segoe UI" />
+            Text="Vehicle info: Not Found" FontFamily="Segoe UI" Foreground="White" />
 
 
         <TextBlock Grid.Column="1" Grid.Row="4" FontWeight="SemiBold" Margin="20,20,20,20"
-            Text="Equipment:" FontFamily="Segoe UI" />
-        <TextBox Background="Transparent" Grid.Column="2" Grid.Row="4" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" x:Name="equipmentText" Height="30" Width="140"/>
+            Text="Equipment:" FontFamily="Segoe UI" Foreground="White" />
+        <TextBox Background="Transparent" Grid.Column="2" Grid.Row="4" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center" x:Name="equipmentText" Height="30" Width="140" Foreground="White"/>
 
-        <Button x:Name="DiagnosticsButton" Click="Diagnostics_Button_Click" Content="Run diagnostics" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Width="120" Padding="20,20,20,20" Margin="95,19.667,0,20" HorizontalAlignment="Left"/>
-        <Button x:Name="RunButton" Click="Run_Button_Click" Content="Run test" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Width="120" Padding="20,20,20,20" Margin="40,20,20,20"/>
+        <Button x:Name="DiagnosticsButton" Click="Diagnostics_Button_Click" Content="Run diagnostics" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Width="120" Padding="20,20,20,20" Margin="95,19.667,0,20" HorizontalAlignment="Left" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button x:Name="RunButton" Click="Run_Button_Click" Content="Run test" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Width="120" Padding="20,20,20,20" Margin="40,20,20,20" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
 
         <!-- <Frame Name="FrameWithinGrid" Source="regnr.xaml"></Frame> -->
 
         <Frame x:Name="Main" Margin="150,0,0,0" NavigationUIVisibility="hidden"/>
-        <Frame Content="" NavigationUIVisibility="Hidden" Name="PopUp" Grid.Column="1" HorizontalAlignment="Left" Height="320" Margin="140,53,0,0" Grid.Row="2" Grid.RowSpan="7" VerticalAlignment="Top" Width="750" Grid.ColumnSpan="4"/>
+        <Frame Content="" NavigationUIVisibility="Hidden" Name="PopUp" Grid.Column="1" HorizontalAlignment="Left" Height="254" Margin="95,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="592" Grid.ColumnSpan="4" Grid.RowSpan="7" BorderBrush="Black"/>
 
     </Grid>
 </Page>

@@ -33,9 +33,10 @@ namespace VeiebryggeApplication
         {
             Main.Content = new Tests();
         }
-        private void BtnMenu3(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Login();
+
         }
     }
 }

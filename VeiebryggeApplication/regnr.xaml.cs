@@ -244,7 +244,6 @@ namespace VeiebryggeApplication
         {
             this.Content = 0;
             this.Height = 0;
-            this.Width = 0;
         }
     }
 }
