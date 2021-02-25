@@ -144,7 +144,6 @@ namespace VeiebryggeApplication
             {
                 MessageBox.Show("MOREN DIN ER EN HOMOFIL MANN ;)");
             }
-
         }
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
