@@ -100,6 +100,16 @@ namespace VeiebryggeApplication
             return true;
         }
 
+        private bool IsValid_1()
+        {
+            if (regText.Text.TrimStart() == string.Empty)
+            {
+                MessageBox.Show("Error! Please enter a valid registration number");
+                return false;
+            }
+            return true;
+        }
+
         private void regText_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
@@ -138,31 +148,65 @@ namespace VeiebryggeApplication
         }
 
 
-        private void Search_Button_Click(object sender, RoutedEventArgs e)
-        {
-            while (1 == 1)
-            {
-                MessageBox.Show("MOREN DIN ER EN HOMOFIL MANN ;)");
-            }
-
-        }
-
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection conn = new SqlConnection(dbConnectionString);
-            try
+            if (IsValid_1())
             {
-                conn.Open();
-                string query = "DELETE FROM Vehicles WHERE regNr='" + this.regText.Text + "'";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Deleted");
-                FillDataGrid();
-                conn.Close();
+                    SqlConnection conn = new SqlConnection(dbConnectionString);
+                try
+                {
+                    conn.Open();
+                    string query = "DELETE FROM Vehicles WHERE regNr='" + this.regText.Text + "'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Deleted");
+                    FillDataGrid();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+        }
+
+        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsValid_1())
             {
-                MessageBox.Show(ex.Message);
+                SqlConnection conn = new SqlConnection(dbConnectionString);
+                try
+                {
+                    conn.Open();
+                    string query = "DELETE FROM Vehicles WHERE regNr='" + this.regText.Text + "'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    FillDataGrid();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            if (IsValid())
+            {
+                SqlConnection conn = new SqlConnection(dbConnectionString);
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO Vehicles (regNr, vehicleName, boolWheels, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + this.wheelsText.Text + "','" + this.yearText.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfully edited");
+                    FillDataGrid();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -192,9 +236,16 @@ namespace VeiebryggeApplication
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
+        private void Close_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = 0;
+            this.Height = 0;
+            this.Width = 0;
+        }
     }
 }
 

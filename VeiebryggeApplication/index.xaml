@@ -30,6 +30,6 @@
             <Button Content="Tidligere tester" Click="BtnMenu2" Style="{StaticResource menuBtn}"/>
             <Button Content="Kjøretøy" Click="BtnMenu3" Style="{StaticResource menuBtn}"/>
         </StackPanel>
-        <Frame x:Name="Main" Margin="150,0,0,0" NavigationUIVisibility="hidden" />
+        <Frame x:Name="Main" Margin="150,0,0,0" NavigationUIVisibility="hidden"/>
     </Grid>
 </Page>

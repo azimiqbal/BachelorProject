@@ -16,6 +16,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 
+
 namespace VeiebryggeApplication
 {
     /// <summary>
@@ -28,7 +29,9 @@ namespace VeiebryggeApplication
             InitializeComponent();
 
         }
-        
+        const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True";
+
+
 
         private void Diagnostics_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -41,10 +44,31 @@ namespace VeiebryggeApplication
         }
 
 
-
-        private void Search_Button_Click(object sender, RoutedEventArgs e)
+        private void regNr_LostFocus(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("ok");
+            try
+            {
+                SqlConnection conn = new SqlConnection(dbConnectionString);
+                conn.Open();
+
+                string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regNrText.Text);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                if (sdr.Read())
+                {
+                    outputText.Text = sdr["vehicleName"].ToString() + sdr["boolWheels"].ToString() + sdr["year"].ToString();
+                }
+                else
+                {
+                   PopUp.Content = new regnr();
+
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
