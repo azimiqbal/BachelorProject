@@ -57,11 +57,21 @@ namespace VeiebryggeApplication
                 SqlDataReader sdr = cmd.ExecuteReader();
                 if (sdr.Read())
                 {
-                    outputText.Text = sdr["vehicleName"].ToString() + sdr["boolWheels"].ToString() + sdr["year"].ToString();
+                    string boolWheels;
+                    if (int.Parse(sdr["boolWheels"].ToString()) > 0)
+                    {
+                        boolWheels = "Hjulbasert";
+                    }
+                    else
+                    {
+                        boolWheels = "Beltekjøretøy";
+                    }
+                    outputText.Text = "Navn: " + sdr["vehicleName"].ToString() + "\n Type: " +  boolWheels + "\n Årstall: " + sdr["year"].ToString();
                 }
                 else
                 {
-                    PopUp.Height = 400;
+                    outputText.Text = "Kjøretøy info: Ikke funnet";
+                   PopUp.Height = 400;
                     PopUp.Content = new regnr();
 
                 }

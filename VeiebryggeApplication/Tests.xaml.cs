@@ -57,7 +57,7 @@ namespace VeiebryggeApplication
         {
             if (selectedTest != null)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete test with ID " + selectedTest + "?", "Delete test", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
+                MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil slette testen med ID " + selectedTest + "?", "Slett test", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
@@ -68,7 +68,7 @@ namespace VeiebryggeApplication
                             string query = "DELETE FROM Tests WHERE testID='" + selectedTest + "'";
                             SqlCommand cmd = new SqlCommand(query, conn);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Deleted test with ID " + selectedTest);
+                            //MessageBox.Show("Deleted test with ID " + selectedTest);
                             FillDataGrid();
                             conn.Close();
                         }
@@ -78,13 +78,13 @@ namespace VeiebryggeApplication
                         }
                         break;
                     case MessageBoxResult.No:
-                        MessageBox.Show("Test not deleted");
+                        //MessageBox.Show("Test not deleted");
                         break;
                 }
             }
             else
             {
-                MessageBox.Show("No test selected");
+                MessageBox.Show("Ingen test valgt");
             }
 
         }
@@ -143,7 +143,7 @@ namespace VeiebryggeApplication
                 Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
                 dlg.FileName = "Test_ID_" + selectedTest; // Default file name
                 dlg.DefaultExt = ".xlsx"; // Default file extension
-                dlg.Filter = "Excel spreadsheets (.xlsx)|*.xlsx"; // Filter files by extension
+                dlg.Filter = "Excel regneark (.xlsx)|*.xlsx"; // Filter files by extension
 
                 // Show save file dialog box
                 Nullable<bool> result = dlg.ShowDialog();
@@ -158,12 +158,21 @@ namespace VeiebryggeApplication
                     workbook.SaveAs(filename, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing,
                     false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange,
                     Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                    MessageBox.Show("Document saved under: " + filename);
+                    MessageBox.Show("Dokument lagret under: " + filename);
                     workbook.Close();
                     app.Quit();
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Ingen test valgt");
+            }
+        }
+
+        private void Import_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

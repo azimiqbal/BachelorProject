@@ -14,12 +14,12 @@
             <Setter Property="Background" Value="#FF404040"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Height" Value="25"/>
-            
+
         </Style>
     </Page.Resources>
 
     <Grid>
-        <DataGrid Name="grdTests" AutoGenerateColumns="False" Width="780" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" SelectionChanged="grdTests_SelectionChanged">
+        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="244" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,67,0,0" SelectionChanged="grdTests_SelectionChanged" Width="603">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Test Nummer" Binding="{Binding testID}"/>
                 <DataGridTextColumn Header="Registrerings nr" Binding="{Binding regNr}"/>
@@ -36,8 +36,9 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="703,305,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-        <Button Content="Export test to excel" HorizontalAlignment="Left" Margin="521,305,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Slett test" HorizontalAlignment="Left" Margin="544,335,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Eksporter til excel" HorizontalAlignment="Left" Margin="362,335,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Importer fra excel" HorizontalAlignment="Left" Margin="173,335,0,0" VerticalAlignment="Top" Width="156" Click="Import_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
     </Grid>
 
 </Page>

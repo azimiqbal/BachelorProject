@@ -8,6 +8,8 @@
       d:DesignHeight="300"
       Title="regnr" Background="#FF404040" Width="585">
 
+
+
     <Page.Resources>
         <Style TargetType="{x:Type DataGridRow}">
             <Setter Property="Foreground" Value="#FFB3B3B3"/>
@@ -18,19 +20,20 @@
     </Page.Resources>
 
     <Grid Margin="0,0,10,0">
+        <Rectangle HorizontalAlignment="Left" Height="300" Stroke="White" VerticalAlignment="Top" Width="585" Margin="0,0,-10,0"/>
         <Grid Margin="0,-10,0,10">
-            <DataGrid Name="grdVehicles" AutoGenerateColumns="False" Margin="50,164,45,10" CanUserAddRows="True"
-                            HeadersVisibility="Column">
+            <DataGrid Name="grdVehicles" AutoGenerateColumns="False"  CanUserAddRows="True" Height="140"
+                            HeadersVisibility="Column" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="79,160,104,0">
 
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Header="Registration number" Width="120" Binding="{Binding regNr}"/>
+                    <DataGridTextColumn Header="Registreringsnr" Width="120" Binding="{Binding regNr}"/>
 
-                    <DataGridTextColumn Header="Name of vehicle" Width="100" Binding="{Binding vehicleName}"/>
+                    <DataGridTextColumn Header="Navn" Width="100" Binding="{Binding vehicleName}"/>
 
-                    <DataGridTextColumn Header="Number of wheels" Width="110" Binding="{Binding boolWheels}"/>
+                    <DataGridTextColumn Header="Type" Width="110" Binding="{Binding boolWheels}"/>
 
-                    <DataGridTextColumn Header="Year" Width="60" Binding="{Binding year}"/>
+                    <DataGridTextColumn Header="Årstall" Width="60" Binding="{Binding year}"/>
 
                 </DataGrid.Columns>
                 <DataGrid.Resources>
@@ -41,17 +44,17 @@
                 </DataGrid.Resources>
             </DataGrid>
 
-            <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="210,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="regText_TextChanged"/>
-            <Label Content="Registration number" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
-            <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="210,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="210,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.458,1.13"/>
-            <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="210,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-            <Label Content="Year" HorizontalAlignment="Left" Margin="73,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
-            <Label Content="Number of wheels" HorizontalAlignment="Left" Margin="50,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
-            <Label Content="Name of vehicle" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
-            <Button Content="Insert" HorizontalAlignment="Left" Margin="385,29,0,0" VerticalAlignment="Top" Width="75" Click="Insert_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-            <Button Content="Delete" HorizontalAlignment="Left" Margin="385,130,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-            <Button Content="Edit" HorizontalAlignment="Left" Margin="385,79,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+            <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TextChanged="regText_TextChanged"/>
+            <Label Content="Registreringsnr" HorizontalAlignment="Left" Margin="56,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
+            <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+            <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.458,1.13"/>
+            <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" />
+            <Label Content="Årstall" HorizontalAlignment="Left" Margin="87,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
+            <Label Content="Type" HorizontalAlignment="Left" Margin="87,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
+            <Label Content="Navn på kjøretøy" HorizontalAlignment="Left" Margin="56,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
+            <Button Content="Sett inn" HorizontalAlignment="Left" Margin="368,27,0,0" VerticalAlignment="Top" Width="69" Click="Insert_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
+            <Button Content="Slett" HorizontalAlignment="Left" Margin="368,116,0,0" VerticalAlignment="Top" Width="69" Click="Delete_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
+            <Button Content="Endre" HorizontalAlignment="Left" Margin="368,72,0,0" VerticalAlignment="Top" Width="69" Click="Edit_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
             <Button Content="X" HorizontalAlignment="Left" Margin="554,9,-11,0" VerticalAlignment="Top" Width="32" Click="Close_Button_Click" Background="#FFCB5757" BorderBrush="{x:Null}" />
             <!-- <Button Content="Update" HorizontalAlignment="Left" Margin="555,63,0,0" VerticalAlignment="Top" Width="75" Click="Update_Button_Click"/> -->
 

@@ -57,7 +57,7 @@ namespace VeiebryggeApplication
                 PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
 
                 //Draw the text
-                graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+                //graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
 
                 //Save the document
                 document.Save("Output.pdf");
