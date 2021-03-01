@@ -31,7 +31,9 @@
 
                     <DataGridTextColumn Header="Navn" Width="100" Binding="{Binding vehicleName}"/>
 
-                    <DataGridTextColumn Header="Type" Width="110" Binding="{Binding boolWheels}"/>
+                    <DataGridTextColumn Header="Type" Width="100" Binding="{Binding type}"/>
+
+                    <!--  <DataGridTextColumn Header="Type" Width="110" Binding="{Binding boolWheels}"/>-->
 
                     <DataGridTextColumn Header="Årstall" Width="60" Binding="{Binding year}"/>
 
@@ -47,7 +49,11 @@
             <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TextChanged="regText_TextChanged"/>
             <Label Content="Registreringsnr" HorizontalAlignment="Left" Margin="56,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
             <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
-            <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.458,1.13"/>
+
+            <RadioButton x:Name="belteName" Content="Belte" HorizontalAlignment="Left" Margin="175,97,0,0" VerticalAlignment="Top" Foreground="White" Checked="Belte_RadioButton_Checked"/>
+            <RadioButton x:Name="hjulName" Content="Hjul" HorizontalAlignment="Left" Margin="270,97,0,0" VerticalAlignment="Top" Foreground="White" Checked="Hjul_RadioButton_Checked" />
+
+            <!--  <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.458,1.13"/>-->
             <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" />
             <Label Content="Årstall" HorizontalAlignment="Left" Margin="87,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
             <Label Content="Type" HorizontalAlignment="Left" Margin="87,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
@@ -56,8 +62,7 @@
             <Button Content="Slett" HorizontalAlignment="Left" Margin="368,116,0,0" VerticalAlignment="Top" Width="69" Click="Delete_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
             <Button Content="Endre" HorizontalAlignment="Left" Margin="368,72,0,0" VerticalAlignment="Top" Width="69" Click="Edit_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
             <Button Content="X" HorizontalAlignment="Left" Margin="554,9,-11,0" VerticalAlignment="Top" Width="32" Click="Close_Button_Click" Background="#FFCB5757" BorderBrush="{x:Null}" />
-            <!-- <Button Content="Update" HorizontalAlignment="Left" Margin="555,63,0,0" VerticalAlignment="Top" Width="75" Click="Update_Button_Click"/> -->
-
+            
         </Grid>
     </Grid>
 </Page>

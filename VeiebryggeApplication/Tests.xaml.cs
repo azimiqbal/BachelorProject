@@ -52,7 +52,7 @@ namespace VeiebryggeApplication
                 grdTests.ItemsSource = dt.DefaultView;
             }
         }
-
+        
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
             if (selectedTest != null)

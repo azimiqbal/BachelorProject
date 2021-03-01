@@ -1,0 +1,66 @@
+﻿<Page x:Class="VeiebryggeApplication.regnr"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VeiebryggeApplication"
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+      Title="regnr" Background="#FF404040" Width="585">
+
+
+
+    <Page.Resources>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="Foreground" Value="#FFB3B3B3"/>
+            <Setter Property="Background" Value="#FF404040"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="0,0,10,0">
+        <Rectangle HorizontalAlignment="Left" Height="300" Stroke="White" VerticalAlignment="Top" Width="585" Margin="0,0,-10,0"/>
+        <Grid Margin="0,-10,0,10">
+            <DataGrid Name="grdVehicles" AutoGenerateColumns="False"  CanUserAddRows="True" Height="140"
+                            HeadersVisibility="Column" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="79,160,104,0">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Registreringsnr" Width="120" Binding="{Binding regNr}"/>
+
+                    <DataGridTextColumn Header="Navn" Width="100" Binding="{Binding vehicleName}"/>
+
+                    <DataGridTextColumn Header="Type" Width="110" Binding="{Binding boolWheels}"/>
+
+                    <DataGridTextColumn Header="Årstall" Width="60" Binding="{Binding year}"/>
+
+                </DataGrid.Columns>
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Foreground" Value="#FFB3B3B3"/>
+                        <Setter Property="Background" Value="#FF525151"/>
+                    </Style>
+                </DataGrid.Resources>
+            </DataGrid>
+
+            <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TextChanged="regText_TextChanged"/>
+            <Label Content="Registreringsnr" HorizontalAlignment="Left" Margin="56,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
+            <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+
+            <RadioButton Content="Belte" HorizontalAlignment="Left" Margin="471,106,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <RadioButton Content="Hjul basert" HorizontalAlignment="Left" Margin="446,133,0,0" VerticalAlignment="Top" Foreground="White" />
+
+            <!-- <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.458,1.13"/> -->
+            <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" />
+            <Label Content="Årstall" HorizontalAlignment="Left" Margin="87,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
+            <Label Content="Type" HorizontalAlignment="Left" Margin="87,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
+            <Label Content="Navn på kjøretøy" HorizontalAlignment="Left" Margin="56,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White"/>
+            <Button Content="Sett inn" HorizontalAlignment="Left" Margin="368,27,0,0" VerticalAlignment="Top" Width="69" Click="Insert_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
+            <Button Content="Slett" HorizontalAlignment="Left" Margin="368,116,0,0" VerticalAlignment="Top" Width="69" Click="Delete_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
+            <Button Content="Endre" HorizontalAlignment="Left" Margin="368,72,0,0" VerticalAlignment="Top" Width="69" Click="Edit_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34"/>
+            <Button Content="X" HorizontalAlignment="Left" Margin="554,9,-11,0" VerticalAlignment="Top" Width="32" Click="Close_Button_Click" Background="#FFCB5757" BorderBrush="{x:Null}" />
+
+        </Grid>
+    </Grid>
+</Page>
