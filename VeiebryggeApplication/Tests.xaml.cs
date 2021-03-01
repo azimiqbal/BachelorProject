@@ -17,6 +17,7 @@ using System.Data;
 
 
 
+
 namespace VeiebryggeApplication
 {
     /// <summary>
@@ -130,7 +131,7 @@ namespace VeiebryggeApplication
 
                 if (sdr.Read())
                 {
-                    worksheet.Name = "TimesTable";
+                    worksheet.Name = "TestData";
 
                     for (int column = 0; column < columnNameList.Count; column++)
                     {
@@ -172,6 +173,61 @@ namespace VeiebryggeApplication
 
         private void Import_Button_Click(object sender, RoutedEventArgs e)
         {
+
+            Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
+            ofd.Title = "Import excel sheet";
+            ofd.Filter = "EXCEL sheets|*.xlsx";
+            ofd.InitialDirectory = @"C:\";
+
+            Nullable<bool> result = ofd.ShowDialog();
+
+            string openFile = ofd.FileName;
+
+
+            //Create COM Objects. Create a COM object for everything that is referenced
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(openFile);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            int colCount = 11;
+
+            List<string> testDataList = new List<string> { };
+
+            for (int j = 1; j <= colCount; j++)
+            {
+                //new line
+                if (j == 1)
+                    Console.Write("\r\n");
+
+                //write the value to the console
+                if (xlRange.Cells[2, j] != null && xlRange.Cells[2, j].Value2 != null)
+                {
+                    testDataList.Add(xlRange.Cells[2, j].Value2.ToString());
+                }
+            }
+
+            xlWorkbook.Close();
+            xlApp.Quit();
+            
+            SqlConnection conn = new SqlConnection(dbConnectionString);
+            try
+            {
+                conn.Open();
+                //"testID", "userId", "regNr", "rolloverAngle", "Equipment", "weight", "timeRan", "centerofgravityx", "centerofgravityy", "centerofgravityz", "error"
+
+                string query = "INSERT INTO tests (testID, userId, regNr, rolloverAngle, Equipment, weight, centerofgravityx, centerofgravityy, centerofgravityz, error) values('" + testDataList[0] + "','" + testDataList[1] + "','" + testDataList[2] + "','" + testDataList[3] + "','" + testDataList[4] + "','" + testDataList[5] + "','"  + testDataList[7] + "','" + testDataList[8] + "','" + testDataList[9] + "','" + testDataList[10] + "')";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                FillDataGrid();
+                conn.Close();
+                MessageBox.Show("Den valgte filen er importert til databasen");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }
