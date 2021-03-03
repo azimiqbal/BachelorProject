@@ -130,3 +130,9 @@ C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\S
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\Syncfusion.Pdf.Portable.xml
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\PdfSharp.Charting.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\PdfSharp.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\PdfSharp.xml
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\PdfSharp.Charting.xml
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\de\PdfSharp.Charting.resources.dll
