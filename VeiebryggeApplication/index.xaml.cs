@@ -13,17 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Diagnostics;
 using System.Windows.Shapes;
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Xml.Serialization;
+using System.Data.SqlClient;
+using System.Data;
 using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using PdfDocument = PdfSharp.Pdf.PdfDocument;
 using PdfPage = PdfSharp.Pdf.PdfPage;
+
 
 namespace VeiebryggeApplication
 {
@@ -57,8 +58,12 @@ namespace VeiebryggeApplication
             pdf.Info.Title = "My First PDF";
             PdfPage pdfPage = pdf.AddPage();
             XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
-            graph.DrawString("This is my first PDF document", font, XBrushes.Black, new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.Center);
+            XFont font = new XFont("Verdana", 12, XFontStyle.Regular);
+            graph.DrawString("Første linje", font, XBrushes.Black, new XRect(5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Andre linje", font, XBrushes.Black, new XRect(5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Tredje linje", font, XBrushes.Black, new XRect(5, 30, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Kjøretøytest", font, XBrushes.Black, new XRect(-5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
+            graph.DrawString("Dato: 03.03.2021", font, XBrushes.Black, new XRect(-5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
             string pdfFilename = "firstpage.pdf";
             pdf.Save(pdfFilename);
             Process.Start(pdfFilename);
