@@ -14,6 +14,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Xml.Serialization;
+using PdfSharp;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using PdfDocument = PdfSharp.Pdf.PdfDocument;
+using PdfPage = PdfSharp.Pdf.PdfPage;
 
 namespace VeiebryggeApplication
 {
@@ -245,6 +255,70 @@ namespace VeiebryggeApplication
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Report_Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Starter kobling til databasen
+            SqlConnection conn = new SqlConnection(dbConnectionString);
+            conn.Open();
+
+            //Henter all dataen fra testen i databasen med samme ID som den valgte testen fra datatabellen
+            string query = "SELECT * FROM tests WHERE testid=" + int.Parse(selectedTest);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader sdr = cmd.ExecuteReader();
+
+            //Lager en liste med alle radnavnene til testene som skal lagres
+            List<string> columnNameList = new List<string> { "testID", "userId", "regNr", "rolloverAngle", "Equipment", "weight", "timeRan", "centerofgravityx", "centerofgravityy", "centerofgravityz", "error" };
+            //Lager en tom liste til all testdataen 
+            List<string> testDataList = new List<string> { };
+
+
+            //Gjør noe dersom SQL queryen ga noen resultater i databasen
+            if (sdr.Read())
+            {
+                //Legger til dataen fra listene med radnavn og testdata i de to første kolonnene
+                //Loopen kjører like mange ganger som det er dataelementer i listen
+                for (int column = 0; column < columnNameList.Count; column++)
+                {
+                    testDataList.Add(sdr[columnNameList[column]].ToString());
+                }
+            }
+            conn.Close();
+
+
+            string testID = testDataList[0];
+            string userId = testDataList[1];
+            string regNr = testDataList[2];
+            string rolloverAngle = testDataList[3];
+            string Equipment = testDataList[4];
+            string weight = testDataList[5];
+            string timeRan = testDataList[6];
+            string centerofgravityx = testDataList[7];
+            string centerofgravityy = testDataList[8];
+            string centerofgravityz = testDataList[9];
+            string error = testDataList[10];
+
+
+            PdfDocument pdf = new PdfDocument();
+            pdf.Info.Title = "My First PDF";
+            PdfPage pdfPage = pdf.AddPage();
+            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+            XFont font = new XFont("Verdana", 12, XFontStyle.Regular);
+            //Øverst til venstre
+            graph.DrawString("Bruker ID: " + userId, font, XBrushes.Black, new XRect(5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Registreringsnummer:" + regNr, font, XBrushes.Black, new XRect(5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Utstyr: " + Equipment, font, XBrushes.Black, new XRect(5, 30, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Vekt: " + weight, font, XBrushes.Black, new XRect(5, 45, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Massesentrum: X: " + centerofgravityx + " Y: " + centerofgravityy + " Z: " + centerofgravityz, font, XBrushes.Black, new XRect(5, 60, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Error: " + error, font, XBrushes.Black, new XRect(5, 75, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            
+            //Øverst til høyre
+            graph.DrawString("testID:" + testID, font, XBrushes.Black, new XRect(-5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
+            graph.DrawString("Dato:" + timeRan, font, XBrushes.Black, new XRect(-5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
+            string pdfFilename = "firstpage.pdf";
+            pdf.Save(pdfFilename);
+            Process.Start(pdfFilename);
         }
     }
 }

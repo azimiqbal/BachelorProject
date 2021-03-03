@@ -28,10 +28,10 @@
         <StackPanel Orientation="Vertical" Width="150" Opacity="0.995" HorizontalAlignment="Left" Height="450" VerticalAlignment="Center">
             <Button Content="Kjør test" Click="BtnMenu1" Style="{StaticResource menuBtn}"/>
             <Button Content="Tidligere tester" Click="BtnMenu2" Style="{StaticResource menuBtn}"/>
-            <Button Content="Generer rapport" Click="BtnMenu3" Style="{StaticResource menuBtn}"/>
+            <Button Content=":)" Style="{StaticResource menuBtn}"/>
 
         </StackPanel>
         <Frame x:Name="Main" Margin="150,0,0,0" NavigationUIVisibility="hidden"/>
-        <Button Content="?" HorizontalAlignment="Left" Margin="-4,420,0,0" VerticalAlignment="Top" Width="40" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="30" Click="Button_Click" FontSize="20"/>
+        <Button Content="?" HorizontalAlignment="Left" Margin="-4,420,0,0" VerticalAlignment="Top" Width="40" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="30" FontSize="20"/>
     </Grid>
 </Page>

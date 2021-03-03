@@ -36,9 +36,10 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-        <Button Content="Slett test" HorizontalAlignment="Left" Margin="544,335,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-        <Button Content="Eksporter til excel" HorizontalAlignment="Left" Margin="362,335,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-        <Button Content="Importer fra excel" HorizontalAlignment="Left" Margin="173,335,0,0" VerticalAlignment="Top" Width="156" Click="Import_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Slett test" HorizontalAlignment="Left" Margin="102,335,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Eksporter til excel" HorizontalAlignment="Left" Margin="377,335,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Importer fra excel" HorizontalAlignment="Left" Margin="207,335,0,0" VerticalAlignment="Top" Width="156" Click="Import_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Generer rapport" HorizontalAlignment="Left" Margin="549,335,0,0" VerticalAlignment="Top" Width="156" Click="Report_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
     </Grid>
 
 </Page>

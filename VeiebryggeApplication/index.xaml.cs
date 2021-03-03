@@ -46,27 +46,5 @@ namespace VeiebryggeApplication
         {
             Main.Content = new Tests();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnMenu3(object sender, RoutedEventArgs e)
-        {
-            PdfDocument pdf = new PdfDocument();
-            pdf.Info.Title = "My First PDF";
-            PdfPage pdfPage = pdf.AddPage();
-            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            XFont font = new XFont("Verdana", 12, XFontStyle.Regular);
-            graph.DrawString("Første linje", font, XBrushes.Black, new XRect(5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            graph.DrawString("Andre linje", font, XBrushes.Black, new XRect(5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            graph.DrawString("Tredje linje", font, XBrushes.Black, new XRect(5, 30, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            graph.DrawString("Kjøretøytest", font, XBrushes.Black, new XRect(-5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
-            graph.DrawString("Dato: 03.03.2021", font, XBrushes.Black, new XRect(-5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
-            string pdfFilename = "firstpage.pdf";
-            pdf.Save(pdfFilename);
-            Process.Start(pdfFilename);
-        }
     }
 }
