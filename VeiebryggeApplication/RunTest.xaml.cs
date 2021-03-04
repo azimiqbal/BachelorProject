@@ -36,12 +36,12 @@ namespace VeiebryggeApplication
 
         private void Diagnostics_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("DEEZ");
+            MessageBox.Show("Kjører diagnostisk test...");
         }
 
         private void Run_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("NUTS");
+            MessageBox.Show("Starter test...");
         }
 
 

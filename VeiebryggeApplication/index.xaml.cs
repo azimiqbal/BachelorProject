@@ -14,37 +14,40 @@ using System.Windows.Navigation;
 using System.Diagnostics;
 using System.Windows.Shapes;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
 using System.Xml.Serialization;
-using System.Data.SqlClient;
 using System.Data;
-using PdfSharp;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
-using PdfDocument = PdfSharp.Pdf.PdfDocument;
-using PdfPage = PdfSharp.Pdf.PdfPage;
+using System.Windows.Media;
 
 
 namespace VeiebryggeApplication
 {
-    /// <summary>
-    /// Interaction logic for index.xaml
-    /// </summary>
     public partial class index : Page
     {
         public index()
         {
             InitializeComponent();
+            Main.Content = new RunTest();
         }
 
-        private void BtnMenu1(object sender, RoutedEventArgs e)
+        private void BtnRuntest(object sender, RoutedEventArgs e)
         {
             Main.Content = new RunTest();
         }
-        private void BtnMenu2(object sender, RoutedEventArgs e)
+
+        private void btnTests(object sender, RoutedEventArgs e)
         {
             Main.Content = new Tests();
+        }
+
+        private void BtnVehicles(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new regnr();
+        }
+
+        private void BtnHelp(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new helpPage();
         }
     }
 }

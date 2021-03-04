@@ -1,0 +1,19 @@
+﻿<Page x:Class="VeiebryggeApplication.helpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VeiebryggeApplication"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="helpPage" Background="#FF404040">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="58,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="329" Width="685" Grid.RowSpan="2"><Run Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo placerat elit, et egestas ex interdum sit amet. Curabitur neque lacus, faucibus semper ipsum sed, mollis porta mauris. Phasellus id blandit erat. Suspendisse tincidunt vehicula tortor, at blandit massa. Phasellus facilisis massa in ipsum dignissim rutrum. Etiam congue lectus vitae erat mattis, eu dictum sapien vulputate. Aliquam fringilla leo arcu, non varius velit molestie at. In ut aliquet lacus, a sodales quam. Sed viverra sodales suscipit. Donec sollicitudin dui ex, vel maximus nisi faucibus quis."/><LineBreak/><Run/><LineBreak/><Run Text="Quisque vel commodo elit, cursus pretium lorem. Cras venenatis porttitor ipsum non porttitor. Aenean consectetur velit ac ligula lobortis egestas. Donec vel convallis tellus. Phasellus vehicula facilisis iaculis. Mauris cursus eget risus a varius. Proin in venenatis sapien. Pellentesque ac convallis ipsum. Donec id libero facilisis, auctor nisi sit amet, sagittis odio. Cras tellus odio, convallis tempor porttitor quis, mollis eu libero. Phasellus blandit ultrices quam eu consequat."/><LineBreak/><Run/><LineBreak/><Run Text="Phasellus vitae urna libero. Nullam porta, tellus consequat vulputate laoreet, lorem justo porta tellus, non hendrerit purus quam at lacus. "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Help page" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="128"/>
+    </Grid>
+</Page>

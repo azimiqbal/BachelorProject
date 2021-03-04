@@ -24,6 +24,7 @@ using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using PdfDocument = PdfSharp.Pdf.PdfDocument;
 using PdfPage = PdfSharp.Pdf.PdfPage;
+using Image = System.Drawing.Image;
 
 namespace VeiebryggeApplication
 {
@@ -114,7 +115,7 @@ namespace VeiebryggeApplication
                 if (drv != null)
                 {
                     selectedTest = drv["testID"].ToString();
-                    Console.WriteLine(selectedTest);
+                    //Console.WriteLine(selectedTest);
                 }
             }
             //Dersom testID til den valgte testen ikke kan hentes forblir den valgte testen null
@@ -312,7 +313,20 @@ namespace VeiebryggeApplication
             graph.DrawString("Vekt: " + weight, font, XBrushes.Black, new XRect(5, 45, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
             graph.DrawString("Massesentrum: X: " + centerofgravityx + " Y: " + centerofgravityy + " Z: " + centerofgravityz, font, XBrushes.Black, new XRect(5, 60, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
             graph.DrawString("Error: " + error, font, XBrushes.Black, new XRect(5, 75, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            
+
+            /*
+            // Draw image
+            MemoryStream strm = new MemoryStream();
+            Image img = Image.FromStream(File.OpenRead("C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\Images"));
+            img.Save(strm, System.Drawing.Imaging.ImageFormat.Png);
+
+            XImage xfoto = XImage.FromStream(strm);
+            graph.DrawImage(xfoto, 30, 130, 380, 250);
+
+            MemoryStream stream = new MemoryStream();
+            pdf.Save(stream, false);
+            */
+
             //Øverst til høyre
             graph.DrawString("testID:" + testID, font, XBrushes.Black, new XRect(-5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
             graph.DrawString("Dato:" + timeRan, font, XBrushes.Black, new XRect(-5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);

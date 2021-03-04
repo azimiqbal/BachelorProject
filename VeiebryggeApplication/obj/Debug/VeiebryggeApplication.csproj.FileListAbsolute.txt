@@ -136,3 +136,5 @@ C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debu
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\PdfSharp.Charting.xml
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\helpPage.g.cs
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\helpPage.baml

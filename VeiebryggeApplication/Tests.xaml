@@ -19,15 +19,15 @@
     </Page.Resources>
 
     <Grid>
-        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="244" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,67,0,0" SelectionChanged="grdTests_SelectionChanged" Width="603">
+        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="299" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,64,0,0" SelectionChanged="grdTests_SelectionChanged" Width="729" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Test Nummer" Binding="{Binding testID}"/>
-                <DataGridTextColumn Header="Registrerings nr" Binding="{Binding regNr}"/>
-                <DataGridTextColumn Header="Bruker ID" Binding="{Binding userId}"/>
-                <DataGridTextColumn Header="Dato" Binding="{Binding timeRan}"/>
-                <DataGridTextColumn Header="Vekt" Binding="{Binding weight}"/>
-                <DataGridTextColumn Header="Vippevinkel" Binding="{Binding rolloverAngle}"/>
-                <DataGridTextColumn Header="Error" Binding="{Binding error}"/>
+                <DataGridTextColumn Header="Test Nummer" Width="100" Binding="{Binding testID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Registrerings nr" Width="100" Binding="{Binding regNr}"/>
+                <DataGridTextColumn Header="Bruker ID" Width="100" Binding="{Binding userId}"/>
+                <DataGridTextColumn Header="Dato" Width="100" Binding="{Binding timeRan}"/>
+                <DataGridTextColumn Header="Vekt" Width="100" Binding="{Binding weight}"/>
+                <DataGridTextColumn Header="Vippevinkel" Width="100" Binding="{Binding rolloverAngle}"/>
+                <DataGridTextColumn Header="Error" Width="100" Binding="{Binding error}"/>
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -36,10 +36,11 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-        <Button Content="Slett test" HorizontalAlignment="Left" Margin="102,335,0,0" VerticalAlignment="Top" Width="87" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-        <Button Content="Eksporter til excel" HorizontalAlignment="Left" Margin="377,335,0,0" VerticalAlignment="Top" Width="156" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-        <Button Content="Importer fra excel" HorizontalAlignment="Left" Margin="207,335,0,0" VerticalAlignment="Top" Width="156" Click="Import_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
-        <Button Content="Generer rapport" HorizontalAlignment="Left" Margin="549,335,0,0" VerticalAlignment="Top" Width="156" Click="Report_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Slett test" HorizontalAlignment="Left" Margin="142,387,0,0" VerticalAlignment="Top" Width="135" Click="Delete_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Eksporter til excel" HorizontalAlignment="Left" Margin="422,387,0,0" VerticalAlignment="Top" Width="135" Click="Export_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Importer fra excel" HorizontalAlignment="Left" Margin="282,387,0,0" VerticalAlignment="Top" Width="135" Click="Import_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <Button Content="Generer rapport" HorizontalAlignment="Left" Margin="562,387,0,0" VerticalAlignment="Top" Width="135" Click="Report_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Tidligere tester" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="197"/>
     </Grid>
 
 </Page>
