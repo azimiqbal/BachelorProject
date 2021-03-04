@@ -23,7 +23,7 @@
         <Rectangle HorizontalAlignment="Left" Height="400" Stroke="White" VerticalAlignment="Top" Width="585" Margin="0,0,-10,0"/>
         <Grid Margin="0,-10,0,10">
             <DataGrid Name="grdVehicles" AutoGenerateColumns="False"  CanUserAddRows="False" Height="171"
-                            HeadersVisibility="Column" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="84,229,109,0" IsReadOnly="True">
+                            HeadersVisibility="Column" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="84,229,109,0" IsReadOnly="True" BorderBrush="Black">
 
                 <DataGrid.Columns>
 
@@ -41,15 +41,15 @@
                 </DataGrid.Resources>
             </DataGrid>
 
-            <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TextChanged="regText_TextChanged" FontSize="16"/>
+            <TextBox Name="regText" PreviewTextInput="regText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TextChanged="regText_TextChanged" FontSize="16" BorderBrush="Black"/>
             <Label Content="Registreringsnr" HorizontalAlignment="Left" Margin="37,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White" FontSize="16"/>
-            <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="16"/>
+            <TextBox Name="nameText" PreviewTextInput="nameText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="16" BorderBrush="Black"/>
 
             <RadioButton x:Name="belteName" Content="Belte" HorizontalAlignment="Left" Margin="175,157,0,0" VerticalAlignment="Top" Foreground="White" Checked="Belte_RadioButton_Checked" FontSize="16"/>
             <RadioButton x:Name="hjulName" Content="Hjul" HorizontalAlignment="Left" Margin="270,157,0,0" VerticalAlignment="Top" Foreground="White" Checked="Hjul_RadioButton_Checked" FontSize="16" />
 
             <!--  <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.458,1.13"/>-->
-            <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="16" />
+            <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="16" BorderBrush="Black" />
             <Label Content="Årstall" HorizontalAlignment="Left" Margin="83,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="16"/>
             <Label Content="Type" HorizontalAlignment="Left" Margin="83,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White" FontSize="16"/>
             <Label Content="Navn på kjøretøy" HorizontalAlignment="Left" Margin="32,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White" FontSize="16"/>

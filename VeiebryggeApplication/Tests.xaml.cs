@@ -43,18 +43,26 @@ namespace VeiebryggeApplication
         //String med lokasjonen til databasen
         String dbConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True";
 
-        //Lager en kobling til databasen og fyller datatabellen med alt innholdet
-        private void FillDataGrid() 
+        //Lager en kobling til databasen og fyller datatabellen med innhold
+        //Dersom det sendes med en string fylles tabellen bare med radene som inneholder denne stringen
+        private void FillDataGrid(string search = "") 
         {
-            string CmdString = string.Empty;
+            string query;
+            if (!(search.TrimStart() == string.Empty))
+            {
+                query = "SELECT * FROM tests WHERE testid LIKE '%" + search + "%' or userId LIKE '%" + search + "%' or regNr LIKE '%" + search + "%' or rolloverAngle LIKE '%" + search + "%' or Equipment LIKE '%" + search + "%' or weight LIKE '%" + search + "%' or error LIKE '%" + search + "%'";
+            }
+            else
+            {
+                query = "SELECT * FROM Tests";
+            }
 
             using (SqlConnection conn = new SqlConnection(dbConnectionString))
             {
                 //Henter data fra test databasen
-                CmdString = "SELECT testID, userId, regNr, rolloverAngle, Equipment, weight, timeRan, centerofgravityx, centerofgravityy, centerofgravityz, error FROM Tests";
-                SqlCommand cmd = new SqlCommand(CmdString, conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                
+
                 //Fyller datagridden med dataen
                 DataTable dt = new DataTable("Test");
                 sda.Fill(dt);
@@ -81,7 +89,7 @@ namespace VeiebryggeApplication
                             string query = "DELETE FROM Tests WHERE testID='" + selectedTest + "'";
                             SqlCommand cmd = new SqlCommand(query, conn);
                             cmd.ExecuteNonQuery();
-                            FillDataGrid();
+                            FillDataGrid(searchTxt.Text);
                             conn.Close();
                         }
                         //Dersom testen ikke kunne slettes vises en meldingsboks med feilen
@@ -333,6 +341,11 @@ namespace VeiebryggeApplication
             string pdfFilename = "firstpage.pdf";
             pdf.Save(pdfFilename);
             Process.Start(pdfFilename);
+        }
+
+        private void searchTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FillDataGrid(searchTxt.Text);
         }
     }
 }

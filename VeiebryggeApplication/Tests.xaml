@@ -19,11 +19,12 @@
     </Page.Resources>
 
     <Grid>
-        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="299" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,64,0,0" SelectionChanged="grdTests_SelectionChanged" Width="729" IsReadOnly="True">
+        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="299" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,64,0,0" SelectionChanged="grdTests_SelectionChanged" Width="729" IsReadOnly="True" BorderBrush="Black" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Test Nummer" Width="100" Binding="{Binding testID}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Registrerings nr" Width="100" Binding="{Binding regNr}"/>
-                <DataGridTextColumn Header="Bruker ID" Width="100" Binding="{Binding userId}"/>
+                <DataGridTextColumn Header="Utstyr" Width="100" Binding="{Binding Equipment}"/>
+                <DataGridTextColumn Header="Bruker ID" Width="100" Binding="{Binding userID}"/>
                 <DataGridTextColumn Header="Dato" Width="100" Binding="{Binding timeRan}"/>
                 <DataGridTextColumn Header="Vekt" Width="100" Binding="{Binding weight}"/>
                 <DataGridTextColumn Header="Vippevinkel" Width="100" Binding="{Binding rolloverAngle}"/>
@@ -41,6 +42,9 @@
         <Button Content="Importer fra excel" HorizontalAlignment="Left" Margin="282,387,0,0" VerticalAlignment="Top" Width="135" Click="Import_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
         <Button Content="Generer rapport" HorizontalAlignment="Left" Margin="562,387,0,0" VerticalAlignment="Top" Width="135" Click="Report_Button_Click" Height="32" FontSize="16" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF"/>
         <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Tidligere tester" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="197"/>
+        <TextBox x:Name="searchTxt" HorizontalAlignment="Left" Height="32" Margin="619,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="16" BorderBrush="Black" TextChanged="searchTxt_TextChanged">
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="587,32,0,0" TextWrapping="Wrap" Text="Søk:" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="32"/>
     </Grid>
 
 </Page>
