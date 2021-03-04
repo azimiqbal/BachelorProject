@@ -322,22 +322,20 @@ namespace VeiebryggeApplication
             graph.DrawString("Massesentrum: X: " + centerofgravityx + " Y: " + centerofgravityy + " Z: " + centerofgravityz, font, XBrushes.Black, new XRect(5, 60, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
             graph.DrawString("Error: " + error, font, XBrushes.Black, new XRect(5, 75, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
 
-            /*
+            
             // Draw image
+            String filepath = @"C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\Images\forsvaretlogo.png";
             MemoryStream strm = new MemoryStream();
-            Image img = Image.FromStream(File.OpenRead("C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\Images"));
+            Image img = Image.FromStream(File.OpenRead(filepath));
             img.Save(strm, System.Drawing.Imaging.ImageFormat.Png);
 
             XImage xfoto = XImage.FromStream(strm);
-            graph.DrawImage(xfoto, 30, 130, 380, 250);
+            graph.DrawImage(xfoto, 400, 10, 180, 100);
 
-            MemoryStream stream = new MemoryStream();
-            pdf.Save(stream, false);
-            */
 
             //Øverst til høyre
-            graph.DrawString("testID:" + testID, font, XBrushes.Black, new XRect(-5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
-            graph.DrawString("Dato:" + timeRan, font, XBrushes.Black, new XRect(-5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
+            graph.DrawString("testID:" + testID, font, XBrushes.Black, new XRect(-5, 150, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
+            graph.DrawString("Dato:" + timeRan, font, XBrushes.Black, new XRect(-5, 165, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
             string pdfFilename = "firstpage.pdf";
             pdf.Save(pdfFilename);
             Process.Start(pdfFilename);
