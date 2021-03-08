@@ -47,14 +47,44 @@ namespace VeiebryggeApplication
         //Dersom det sendes med en string fylles tabellen bare med radene som inneholder denne stringen
         private void FillDataGrid(string search = "") 
         {
+            String filterText = comboFilter.Text;
+
+            switch (filterText)
+            {
+                case @"Alle felter":
+                    filterText = "";
+                    break;
+                case @"Test ID":
+                    filterText = "testid";
+                    break;
+                case @"RegNr":
+                    filterText = "tests.regNr";
+                    break;
+                case @"Bruker":
+                    filterText = "UserName";
+                    break;
+                default:
+                    Console.WriteLine("Nothing");
+                    break;
+            }
+
+
             string query;
             if (!(search.TrimStart() == string.Empty))
             {
-                query = "SELECT * FROM tests WHERE testid LIKE '%" + search + "%' or userId LIKE '%" + search + "%' or regNr LIKE '%" + search + "%' or rolloverAngle LIKE '%" + search + "%' or Equipment LIKE '%" + search + "%' or weight LIKE '%" + search + "%' or error LIKE '%" + search + "%'";
+                if(filterText == "")
+                {
+                    query = "SELECT * FROM tests INNER JOIN Vehicles on tests.regNr = Vehicles.regNr INNER JOIN USERS on tests.userID = USERS.userId WHERE testid LIKE '%" + search + "%' or tests.userId LIKE '%" + search + "%' or tests.regNr LIKE '%" + search + "%' or rolloverAngle LIKE '%" + search + "%' or Equipment LIKE '%" + search + "%' or weight LIKE '%" + search + "%' or error LIKE '%" + search + "%'";
+                    //query += " INNER JOIN USERS on tests.userID = USERS.userId";
+                }
+                else
+                {
+                    query = "SELECT * FROM tests INNER JOIN Vehicles on tests.regNr = Vehicles.regNr INNER JOIN USERS on tests.userID = USERS.userId WHERE " + filterText + " LIKE '%" + search + "%'";
+                }
             }
             else
             {
-                query = "SELECT * FROM Tests";
+                query = "SELECT * FROM Tests INNER JOIN Vehicles on tests.regNr = Vehicles.regNr INNER JOIN USERS on tests.userID = USERS.userId";
             }
 
             using (SqlConnection conn = new SqlConnection(dbConnectionString))
@@ -273,12 +303,12 @@ namespace VeiebryggeApplication
             conn.Open();
 
             //Henter all dataen fra testen i databasen med samme ID som den valgte testen fra datatabellen
-            string query = "SELECT * FROM tests WHERE testid=" + int.Parse(selectedTest);
+            string query = "SELECT * FROM tests INNER JOIN Vehicles on tests.regNr = Vehicles.regNr INNER JOIN USERS on tests.userID = USERS.userId WHERE testid=" + int.Parse(selectedTest);
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader sdr = cmd.ExecuteReader();
 
             //Lager en liste med alle radnavnene til testene som skal lagres
-            List<string> columnNameList = new List<string> { "testID", "userId", "regNr", "rolloverAngle", "Equipment", "weight", "timeRan", "centerofgravityx", "centerofgravityy", "centerofgravityz", "error" };
+            List<string> columnNameList = new List<string> { "testID", "userId", "regNr", "rolloverAngle", "Equipment", "weight", "timeRan", "centerofgravityx", "centerofgravityy", "centerofgravityz", "error", "UserName", "vehicleName" };
             //Lager en tom liste til all testdataen 
             List<string> testDataList = new List<string> { };
 
@@ -307,6 +337,8 @@ namespace VeiebryggeApplication
             string centerofgravityy = testDataList[8];
             string centerofgravityz = testDataList[9];
             string error = testDataList[10];
+            string username = testDataList[11];
+            string vehicleName = testDataList[12];
 
 
             PdfDocument pdf = new PdfDocument();
@@ -315,8 +347,8 @@ namespace VeiebryggeApplication
             XGraphics graph = XGraphics.FromPdfPage(pdfPage);
             XFont font = new XFont("Verdana", 12, XFontStyle.Regular);
             //Øverst til venstre
-            graph.DrawString("Bruker ID: " + userId, font, XBrushes.Black, new XRect(5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            graph.DrawString("Registreringsnummer:" + regNr, font, XBrushes.Black, new XRect(5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Bruker: ID - " + userId + ", Navn - " + username, font, XBrushes.Black, new XRect(5, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            graph.DrawString("Kjøretøy: Reg nr - " + regNr + ", Navn - " + vehicleName, font, XBrushes.Black, new XRect(5, 15, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
             graph.DrawString("Utstyr: " + Equipment, font, XBrushes.Black, new XRect(5, 30, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
             graph.DrawString("Vekt: " + weight, font, XBrushes.Black, new XRect(5, 45, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
             graph.DrawString("Massesentrum: X: " + centerofgravityx + " Y: " + centerofgravityy + " Z: " + centerofgravityz, font, XBrushes.Black, new XRect(5, 60, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
@@ -342,6 +374,12 @@ namespace VeiebryggeApplication
         }
 
         private void searchTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FillDataGrid(searchTxt.Text);
+        }
+
+
+        private void comboFilter_DropDownClosed(object sender, EventArgs e)
         {
             FillDataGrid(searchTxt.Text);
         }

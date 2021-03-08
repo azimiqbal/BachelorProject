@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VeiebryggeApplication"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="Tests" Background="#FF404040">
 
     <Page.Resources>
@@ -19,12 +19,13 @@
     </Page.Resources>
 
     <Grid>
-        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="299" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,64,0,0" SelectionChanged="grdTests_SelectionChanged" Width="729" IsReadOnly="True" BorderBrush="Black" FontSize="14">
+        <DataGrid Name="grdTests" AutoGenerateColumns="False" Height="299" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,64,0,0" SelectionChanged="grdTests_SelectionChanged" Width="895" IsReadOnly="True" BorderBrush="Black" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Test Nummer" Width="100" Binding="{Binding testID}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Registrerings nr" Width="100" Binding="{Binding regNr}"/>
+                <DataGridTextColumn Header="Kjøretøy navn" Width="100" Binding="{Binding vehicleName}"/>
                 <DataGridTextColumn Header="Utstyr" Width="100" Binding="{Binding Equipment}"/>
-                <DataGridTextColumn Header="Bruker ID" Width="100" Binding="{Binding userID}"/>
+                <DataGridTextColumn Header="Bruker" Width="100" Binding="{Binding UserName}"/>
                 <DataGridTextColumn Header="Dato" Width="100" Binding="{Binding timeRan}"/>
                 <DataGridTextColumn Header="Vekt" Width="100" Binding="{Binding weight}"/>
                 <DataGridTextColumn Header="Vippevinkel" Width="100" Binding="{Binding rolloverAngle}"/>
@@ -44,7 +45,19 @@
         <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Tidligere tester" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="197"/>
         <TextBox x:Name="searchTxt" HorizontalAlignment="Left" Height="32" Margin="619,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="16" BorderBrush="Black" TextChanged="searchTxt_TextChanged">
         </TextBox>
-        <TextBlock HorizontalAlignment="Left" Margin="587,32,0,0" TextWrapping="Wrap" Text="Søk:" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="695,1,0,0" TextWrapping="Wrap" Text="Søk" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="32"/>
+        <ComboBox x:Name="comboFilter" Margin="462,29,186,394" FontSize="16" BorderBrush="Black" Height="25" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" DropDownClosed="comboFilter_DropDownClosed">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem IsSelected="True">Alle felter</ComboBoxItem>
+            <ComboBoxItem>Test ID</ComboBoxItem>
+            <ComboBoxItem>RegNr</ComboBoxItem>
+            <ComboBoxItem>Bruker</ComboBoxItem>
+        </ComboBox>
     </Grid>
 
 </Page>
