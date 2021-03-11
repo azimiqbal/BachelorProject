@@ -23,19 +23,19 @@
 
         <TextBlock   FontWeight="SemiBold" Margin="96,118,0,0"
             Text="Regnr:" FontFamily="Segoe UI" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" />
-        <TextBox Background="White"  x:Name="regNrText" Height="30" Width="213" LostFocus="regNr_LostFocus" Foreground="White" Margin="160,116,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+        <TextBox Background="White"  x:Name="regNrText" Height="30" Width="213" LostFocus="regNr_LostFocus" Foreground="Black" Margin="160,116,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  />
         <TextBlock Name="outputText"  FontWeight="SemiBold" Margin="378,116,0,0"
             Text="Kjøretøy info: Ikke funnet" FontFamily="Segoe UI" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="171" FontSize="14" />
 
 
         <TextBlock  FontWeight="SemiBold" Margin="95,189,0,0"
             Text="Utstyr:" FontFamily="Segoe UI" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" />
-        <TextBox Background="White"   x:Name="equipmentText" Width="389" Foreground="White" Margin="160,194,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" />
+        <TextBox Background="White"   x:Name="equipmentText" Width="389" Foreground="Black" Margin="160,194,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="151" />
 
         <Button x:Name="DiagnosticsButton" Click="Diagnostics_Button_Click" Content="Diagnostisk test"  Width="135"  Margin="211,381,0,0" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" FontSize="16" />
         <Button x:Name="RunButton" Click="Run_Button_Click" Content="Kjør test" Width="135" Margin="351,381,0,0" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" FontSize="16" />
 
-        <Frame Content="" NavigationUIVisibility="Hidden" Name="PopUp" Height="254" Margin="123,91,0,0"  Width="592" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Frame Content="" NavigationUIVisibility="Hidden" Name="PopUp" Height="254" Margin="118,91,0,0"  Width="592" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Kjør test" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="125"/>
     </Grid>
 

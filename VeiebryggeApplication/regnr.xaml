@@ -48,7 +48,6 @@
             <RadioButton x:Name="belteName" Content="Belte" HorizontalAlignment="Left" Margin="175,157,0,0" VerticalAlignment="Top" Foreground="White" Checked="Belte_RadioButton_Checked" FontSize="16"/>
             <RadioButton x:Name="hjulName" Content="Hjul" HorizontalAlignment="Left" Margin="270,157,0,0" VerticalAlignment="Top" Foreground="White" Checked="Hjul_RadioButton_Checked" FontSize="16" />
 
-            <!--  <TextBox Name="wheelsText" PreviewTextInput="wheelsText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.458,1.13"/>-->
             <TextBox Name="yearText" PreviewTextInput="yearText_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="164,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="16" BorderBrush="Black" />
             <Label Content="Årstall" HorizontalAlignment="Left" Margin="83,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="16"/>
             <Label Content="Type" HorizontalAlignment="Left" Margin="83,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.212,0.5" Foreground="White" FontSize="16"/>
@@ -57,6 +56,21 @@
             <Button Content="Slett" HorizontalAlignment="Left" Margin="368,176,0,0" VerticalAlignment="Top" Width="69" Click="Delete_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34" FontSize="16"/>
             <Button Content="Endre" HorizontalAlignment="Left" Margin="368,132,0,0" VerticalAlignment="Top" Width="69" Click="Edit_Button_Click" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" Height="34" FontSize="16"/>
             <Button Content="X" HorizontalAlignment="Left" Margin="553,10,-10,0" VerticalAlignment="Top" Width="32" Click="Close_Button_Click" Background="#FFCB5757" BorderBrush="{x:Null}" />
+            <TextBox x:Name="searchTxt" HorizontalAlignment="Left" Height="27" Margin="455,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="16" BorderBrush="Black" TextChanged="searchTxt_TextChanged"/>
+            <ComboBox x:Name="comboFilter" Margin="290,43,0,0" FontSize="16" BorderBrush="Black" Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" DropDownClosed="comboFilter_DropDownClosed">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem IsSelected="True" Content="Alle felter"/>
+                <ComboBoxItem Content="RegNr"/>
+                <ComboBoxItem Content="vehicleName"/>
+                <ComboBoxItem Content="Type"/>
+                <ComboBoxItem Content="Year"/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="405,43,0,0" TextWrapping="Wrap" Text="Søk" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="32"/>
 
         </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Kjøretøy" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="119"/>

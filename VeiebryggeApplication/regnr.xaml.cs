@@ -36,13 +36,57 @@ namespace VeiebryggeApplication
         const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True"; //string that connects to the database
 
         //Lager en kobling til databasen og fyller datatabellen med alt innholdet
-        private void FillDataGrid() 
+        private void FillDataGrid(string search = "") 
         {
+            String filterText = comboFilter.Text;
+
+            switch (filterText)
+            {
+                case @"Alle felter":
+                    filterText = "";
+                    break;
+                case @"RegNr":
+                    filterText = "regNr";
+                    break;
+                case @"vehicleName":
+                    filterText = "vehicleName";
+                    break;
+                case @"Type":
+                    filterText = "type";
+                    break;
+                case @"Year":
+                    filterText = "year";
+                    break;
+                default:
+                    Console.WriteLine("Nothing");
+                    break;
+            }
+
+
+            string query;
+            if (!(search.TrimStart() == string.Empty))
+            {
+                if (filterText == "")
+                {
+                    query = "SELECT * FROM Vehicles WHERE regNr LIKE '%" + search + "%' or vehicleName LIKE '%" + search + "%' or type LIKE '%" + search + "%' or year LIKE '%" + search + "%'";
+                    //query += " INNER JOIN USERS on tests.userID = USERS.userId";
+                }
+                else
+                {
+                    query = "SELECT * FROM Vehicles WHERE " + filterText + " LIKE '%" + search + "%'";
+                }
+            }
+            else
+            {
+                query = "SELECT * FROM Vehicles";
+            }
+
+
             string CmdString = string.Empty;
             using (SqlConnection conn = new SqlConnection(dbConnectionString))
             {
-                CmdString = "SELECT regNr, vehicleName, type, year FROM Vehicles";
-                SqlCommand cmd = new SqlCommand(CmdString, conn);
+                //CmdString = "SELECT regNr, vehicleName, type, year FROM Vehicles";
+                SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Vehicles");
                 sda.Fill(dt);
@@ -271,6 +315,20 @@ namespace VeiebryggeApplication
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void searchTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FillDataGrid(searchTxt.Text);
+        }
+
+
+        private void comboFilter_DropDownClosed(object sender, EventArgs e)
+        {
+            FillDataGrid(searchTxt.Text);
+        }
+
+
+
 
         private void Close_Button_Click(object sender, RoutedEventArgs e) //function to exit out of regnr form
         {
