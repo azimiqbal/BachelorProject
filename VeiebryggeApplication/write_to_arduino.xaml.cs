@@ -69,3 +69,26 @@ namespace VeiebryggeApplication
         }
     }
 }
+
+/*  Arduino koden
+void setup()   
+{  
+    pinMode(2, OUTPUT);  
+    Serial.begin(9600);  
+}  
+  
+void loop()   
+{  
+    if (Serial.available() > 0)   
+    {  
+        char c = Serial.read();  
+        if (c == '1')   
+        {  
+            digitalWrite(2, HIGH);  
+        } else if (c == '0')   
+        {  
+            digitalWrite(2, LOW);  
+        }  
+    }  
+} 
+*/
