@@ -132,6 +132,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="read_from_arduino.xaml.cs">
+      <DependentUpon>read_from_arduino.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="write_to_arduino.xaml.cs">
+      <DependentUpon>write_to_arduino.xaml</DependentUpon>
+    </Compile>
     <Compile Include="forsvaretDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +161,14 @@
     <Compile Include="Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
+    <Page Include="read_from_arduino.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="write_to_arduino.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="helpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

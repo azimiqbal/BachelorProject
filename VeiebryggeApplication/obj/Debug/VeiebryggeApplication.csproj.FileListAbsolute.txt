@@ -140,3 +140,7 @@ C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debu
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\helpPage.baml
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPage.g.cs
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPage.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\read_from_arduino.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\write_to_arduino.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\read_from_arduino.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\write_to_arduino.baml
