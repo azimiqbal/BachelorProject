@@ -24,5 +24,23 @@ namespace VeiebryggeApplication
         {
             InitializeComponent();
         }
+
+        private void Button_Click_runTest(object sender, RoutedEventArgs e)
+        {
+            NavigationService service = NavigationService.GetNavigationService(this);
+            service.Navigate(new Uri("helpPage_RunTest.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Button_Click_prevTest(object sender, RoutedEventArgs e)
+        {
+            NavigationService service = NavigationService.GetNavigationService(this);
+            service.Navigate(new Uri("helpPage_Tests.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Button_Click_vehicles(object sender, RoutedEventArgs e)
+        {
+            NavigationService service = NavigationService.GetNavigationService(this);
+            service.Navigate(new Uri("helpPageVehicles.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

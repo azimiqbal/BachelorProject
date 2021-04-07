@@ -1,0 +1,21 @@
+﻿<Page x:Class="VeiebryggeApplication.helpPageVehicles"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VeiebryggeApplication"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="helpPageVehicles" Background="#FF404040">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="58,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="367" Width="685" Grid.RowSpan="2"><Run Text="Denne siden viser alle kjøretøy som er registrert i databasen og tillater brukeren å legge til nye kjøretøy"/><LineBreak/><Run/><LineBreak/><Run Text="Sett inn - Ved å trykke på denne knappen, vil brukeren kunne legge til et nytt kjøretøy i datbasen. Det er viktig at dataen i tekstfeltene er på riktig format, ellers vil det forekomme feilmeldinger."/><LineBreak/><LineBreak/><Run Text="Endre - For å endre opplysninger på et kjøretøy, må brukeren først velge kjøretøyet som skal endres. Deretter kan hvilken som helst detalj ved kjøretøyet endres. Etter endringen er gjort, og knappen er trykket på, vil verdiene i databasen oppdateres og overskrive de eksisterende opplysningene"/><LineBreak/><LineBreak/><Run Text="Slett - For å slette et kjøretøy, må brukeren først velge kjøretøyet som skal slettes. Ved sletting, vil dette kjøretøyet bli fjernet fra databasen permanent"/><LineBreak/><LineBreak/><Run Text="Søk - Brukeren kan søke etter nøkkeldata i søkefeltet og den samsvarende dataen vil dukke opp. For å gjøre søket enkelt, er det også en rullegardinmeny med filter der søkeordet kan begrenses til data i testen, for eksempel med registreringsnummer"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Bruksveiledning for siden kjøretøy" VerticalAlignment="Top" FontSize="26" Foreground="White" Width="392"/>
+        <Button Content="Kjør test" HorizontalAlignment="Left" Margin="230,345,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="40" Click="Button_Click_runTest3" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" FontSize="16"/>
+        <Button Content="Tidligere tester" HorizontalAlignment="Left" Margin="415,345,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="40" Click="Button_Click_prevTest3" Background="#FF616161" BorderBrush="Black" Foreground="#FFCFCFCF" FontSize="16"/>
+    </Grid>
+</Page>

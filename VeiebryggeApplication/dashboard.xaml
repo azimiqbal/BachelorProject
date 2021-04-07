@@ -1,0 +1,16 @@
+﻿<Page x:Class="VeiebryggeApplication.dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VeiebryggeApplication"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="dashboard" Background="#FF404040">
+
+    <Grid>
+        <TextBlock FontSize="35" Text="Dashboard" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="320,35,311,368"/>
+        <TextBlock HorizontalAlignment="Left" Margin="240,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="113" Width="370" Text="Velkommen til VeieBryggeSolutions. Vennligst trykk på spørsmålstegnet nede til venstre om det er usikkerhet rundt bruk av programmet"/>
+        <Image Source="C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\Images\veiebryggeLogo.png" Margin="170,220,155,24" />
+    </Grid>
+</Page>

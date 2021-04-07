@@ -132,11 +132,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="centerOfGravity.xaml.cs">
+      <DependentUpon>centerOfGravity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.xaml.cs">
+      <DependentUpon>dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="helpPageVehicles.xaml.cs">
+      <DependentUpon>helpPageVehicles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="helpPage_RunTest.xaml.cs">
+      <DependentUpon>helpPage_RunTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="helpPage_Tests.xaml.cs">
+      <DependentUpon>helpPage_Tests.xaml</DependentUpon>
+    </Compile>
     <Compile Include="read_from_arduino.xaml.cs">
       <DependentUpon>read_from_arduino.xaml</DependentUpon>
     </Compile>
-    <Compile Include="visualizeData.xaml.cs">
-      <DependentUpon>visualizeData.xaml</DependentUpon>
+    <Compile Include="regnr2.xaml.cs">
+      <DependentUpon>regnr2.xaml</DependentUpon>
     </Compile>
     <Compile Include="write_to_arduino.xaml.cs">
       <DependentUpon>write_to_arduino.xaml</DependentUpon>
@@ -164,11 +179,31 @@
     <Compile Include="Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
+    <Page Include="centerOfGravity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="helpPageVehicles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="helpPage_RunTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="helpPage_Tests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="read_from_arduino.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="visualizeData.xaml">
+    <Page Include="regnr2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

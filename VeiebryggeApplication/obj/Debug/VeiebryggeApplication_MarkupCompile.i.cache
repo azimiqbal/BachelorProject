@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\App.xaml
-1043843018
+151036093519
 2561757454
-16-1509398489
+21-1278128470
 31-2030102177
-read_from_arduino.xaml;visualizeData.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
+centerOfGravity.xaml;dashboard.xaml;helpPageVehicles.xaml;helpPage_RunTest.xaml;helpPage_Tests.xaml;read_from_arduino.xaml;regnr2.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
 
 True
 

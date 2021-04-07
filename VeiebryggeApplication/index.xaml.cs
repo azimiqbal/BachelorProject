@@ -17,7 +17,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Xml.Serialization;
 using System.Data;
-using System.Windows.Media;
 
 
 namespace VeiebryggeApplication
@@ -42,7 +41,7 @@ namespace VeiebryggeApplication
 
         private void BtnVehicles(object sender, RoutedEventArgs e)
         {
-            Main.Content = new regnr();
+            Main.Content = new regnr2();
         }
 
         private void BtnHelp(object sender, RoutedEventArgs e)

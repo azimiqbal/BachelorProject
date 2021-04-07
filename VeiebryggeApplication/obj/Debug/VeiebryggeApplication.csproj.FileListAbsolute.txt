@@ -144,3 +144,15 @@ C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\r
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\write_to_arduino.g.cs
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\read_from_arduino.baml
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\write_to_arduino.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\centerOfGravity.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\centerOfGravity.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\dashboard.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\dashboard.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPageVehicles.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPage_RunTest.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPage_Tests.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPageVehicles.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPage_RunTest.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\helpPage_Tests.baml
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\regnr2.g.cs
+C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\regnr2.baml
