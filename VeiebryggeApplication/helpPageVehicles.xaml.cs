@@ -37,5 +37,11 @@ namespace VeiebryggeApplication
             service.Navigate(new Uri("helpPage_Tests.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        private void tilbake_Click3(object sender, RoutedEventArgs e)
+        {
+            NavigationService service = NavigationService.GetNavigationService(this);
+            service.Navigate(new Uri("helpPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
     }
 }

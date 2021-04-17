@@ -31,11 +31,13 @@ namespace VeiebryggeApplication
         }
 
         //Variabel som holder på radio knapp verdien
-        string type; 
+        string type;
 
+        //String med lokasjonen til databasen
         const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True"; //string that connects to the database
 
         //Lager en kobling til databasen og fyller datatabellen med alt innholdet
+        //Dersom det sendes med en string fylles tabellen bare med radene som inneholder denne stringen
         private void FillDataGrid(string search = "") 
         {
             String filterText = comboFilter.Text;
@@ -68,6 +70,7 @@ namespace VeiebryggeApplication
             {
                 if (filterText == "")
                 {
+                    //get values from the Vechicles table
                     query = "SELECT * FROM Vehicles WHERE regNr LIKE '%" + search + "%' or vehicleName LIKE '%" + search + "%' or type LIKE '%" + search + "%' or year LIKE '%" + search + "%'";
                     //query += " INNER JOIN USERS on tests.userID = USERS.userId";
                 }
@@ -86,13 +89,18 @@ namespace VeiebryggeApplication
             using (SqlConnection conn = new SqlConnection(dbConnectionString))
             {
                 //CmdString = "SELECT regNr, vehicleName, type, year FROM Vehicles";
+
+                //Henter data fra test databasen
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                //Fyller datagrid med data
                 DataTable dt = new DataTable("Vehicles");
                 sda.Fill(dt);
                 grdVehicles.ItemsSource = dt.DefaultView;
             }
         }
+
 
         //Verifiserer at alle tekstfeltene er fylt ut riktig
         private bool IsValid() 
@@ -120,77 +128,69 @@ namespace VeiebryggeApplication
             return true;
         }
 
-        private bool IsValid_1()
-        {
-            if (regText.Text.TrimStart() == string.Empty)
-            {
-                MessageBox.Show("Error! Please enter a valid registration number");
-                return false;
-            }
-            return true;
-        }
 
-        //Knapp som setter inn dataen fra tekstboksene i databasen
+
+        //Ved trykk på denne knappen, vil dataen i tekstboksene legges til i databasen
         private void Insert_Button_Click(object sender, RoutedEventArgs e)
         {
             //Sjekker at alle feltene er fylt ut riktig
             if (IsValid())
             {
-                MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil legge til dette kjøretøyet ?", "Legg til kjøretøy", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
-
+                //Åpner en meldingsboks for å bekrefte innsetting av data
+                MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil legge til dette kjøretøyet ?", "Legg til kjøretøy", MessageBoxButton.YesNo); 
                 switch (result)
                 {
+                    //om bruker "sier" ja for å sette inn data
                     case MessageBoxResult.Yes:
+                        //kobler til databasen
                         SqlConnection conn = new SqlConnection(dbConnectionString);
                     
-                        //Prøver å sette inn data fra tekstboksene i databasen
+                        //Sette inn data fra tekstboksene i databasen
                         try
-                    {
-                        conn.Open();
-                        string query = "INSERT INTO Vehicles (regNr, vehicleName, type, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + type + "','" + this.yearText.Text + "')";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                        FillDataGrid();
-                        conn.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                            {
+                            //Legger til kjøretøy i databasen
+                            conn.Open();
+                            string query = "INSERT INTO Vehicles (regNr, vehicleName, type, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + type + "','" + this.yearText.Text + "')";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            FillDataGrid();
+                            conn.Close();
+                            }
+                        //Dersom kjøretøyet ikke kunne settes inn, vises en meldingsboks med feilen
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
-                    case MessageBoxResult.No:
-                        break;
+                        //Hvis brukeren sier nei til å sette inn data skjer det ikke noe
+                        case MessageBoxResult.No:
+                            break;
                 }
             }
         }
 
 
-        //Funskjoner som sørger for at tekstboksene har riktig type input
+        //RegEx-Funskjoner som sørger for at tekstboksene har riktig type input
         private void regText_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+"); //makes sure that input can only be integers
+            Regex regex = new Regex("[^0-9]+"); //regnr kan kun være int
             e.Handled = regex.IsMatch(e.Text);
         }
 
         private void yearText_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            Regex regex = new Regex("[^0-9]+"); //årstall kan kun være int
             e.Handled = regex.IsMatch(e.Text);
         }
 
         private void nameText_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^a-æ,ø,å]+"); //makes sure that input can only be letters from a-å
+            Regex regex = new Regex("[^a-æ,ø,å]+"); //kjøretøy-navn kan kun være string mellom a-å
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void wheelsText_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
 
-        //Funskjon som søker etter om en verdi er i databasen 
+        //Funskjon som søker etter om en verdi er i Vehicles tabellen 
         public void searchData(string valuetoSearch)
         {
             using (SqlConnection conn = new SqlConnection(dbConnectionString))
@@ -207,38 +207,41 @@ namespace VeiebryggeApplication
         //Knapp som sletter objekter fra databasen
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (IsValid_1())
+            if (IsValid())
             {
-                    MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil slette dette kjøretøyet ?" , "Slett kjøretøy", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
-                
+                //Åpner en meldingsboks for å bekrefte sletting av kjøretøy
+                MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil slette dette kjøretøyet ?" , "Slett kjøretøy", MessageBoxButton.YesNo); 
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
                     SqlConnection conn = new SqlConnection(dbConnectionString);
                         try
-                    {
+                        {
+                        //Sletter den testen med regNr som er lik den valgte testen fra databasen
                         conn.Open();
                         string query = "DELETE FROM Vehicles WHERE regNr='" + this.regText.Text + "'";
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                         FillDataGrid();
                         conn.Close();
-                    }
+                        }
+                        //Dersom kjøretøyet ikke kunne slettes vises en meldingsboks med feilen
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
                         }
                         break;
+                    //Hvis brukeren sier nei til å slette kjøretøyet skjer det ikke noe
                     case MessageBoxResult.No:
                         break;
                 }
             }
         }
  
-        //Knapp som endrer verdiene i databasen på et valgfritt kjøretøy
-        private void Edit_Button_Click(object sender, RoutedEventArgs e) //function for editing
+        //Knapp som endrer verdiene i databasen på et valgfritt kjøretøy, delete + insert = edit
+        private void Edit_Button_Click(object sender, RoutedEventArgs e) 
         {
-            if (IsValid_1())
+            if (IsValid())
             {
                 SqlConnection conn = new SqlConnection(dbConnectionString);
                 try
@@ -254,39 +257,34 @@ namespace VeiebryggeApplication
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
 
-            if (IsValid())
-            {
-                MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil gjennomføre denne endringen ?" , "Endre kjøretøy opplysninger", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
-
+            MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil gjennomføre denne endringen ?" , "Endre kjøretøy opplysninger", MessageBoxButton.YesNo);
                 switch (result)
                 {
-                    case MessageBoxResult.Yes:
-                        SqlConnection conn = new SqlConnection(dbConnectionString);
-                try
-                {
-                    conn.Open();
-                    string query = "INSERT INTO Vehicles (regNr, vehicleName, type, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + type + "','" + this.yearText.Text + "')";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
-                    FillDataGrid();
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                        break;
+                   case MessageBoxResult.Yes:
+                    SqlConnection conn = new SqlConnection(dbConnectionString);
+                    try
+                    {
+                        conn.Open();
+                        string query = "INSERT INTO Vehicles (regNr, vehicleName, type, year) values('" + this.regText.Text + "','" + this.nameText.Text + "','" + type + "','" + this.yearText.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.ExecuteNonQuery();
+                        FillDataGrid();
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    break;
                     case MessageBoxResult.No:
                         break;
-                }
-            }
-        }
+                    }
+                 }
 
         //Funksjon som kjører hver gang teksten i registreringsnummer feltet er endret 
-        private void regText_TextChanged(object sender, TextChangedEventArgs e) //autocomplete
+        private void regText_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -328,21 +326,20 @@ namespace VeiebryggeApplication
         }
 
 
-
-
-        private void Close_Button_Click(object sender, RoutedEventArgs e) //function to exit out of regnr form
+        //for å lukke vindu
+        private void Close_Button_Click(object sender, RoutedEventArgs e) 
         {
             this.Content = 0;
             this.Height = 0;
         }
 
-
-        private void Belte_RadioButton_Checked(object sender, RoutedEventArgs e) //when user select belte in radiobutton
+        //når bruker velger belte 
+        private void Belte_RadioButton_Checked(object sender, RoutedEventArgs e) 
         {
             type = "Belte";
         }
-
-        private void Hjul_RadioButton_Checked(object sender, RoutedEventArgs e) //when user select hjul in radiobutton
+        //når bruker velger hjul 
+        private void Hjul_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             type = "Hjul";
         }
