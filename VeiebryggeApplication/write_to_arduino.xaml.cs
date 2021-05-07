@@ -70,7 +70,7 @@ namespace VeiebryggeApplication
     }
 }
 
-/*  Arduino koden
+/*  Arduino koden, husk seriell
 void setup()   
 {  
     pinMode(2, OUTPUT);  
