@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\App.xaml
-151036093519
+171306328408
 2561757454
-21-1278128470
-31-2030102177
-centerOfGravity.xaml;dashboard.xaml;helpPageVehicles.xaml;helpPage_RunTest.xaml;helpPage_Tests.xaml;read_from_arduino.xaml;regnr2.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
+23-1322962095
+145-1060409214
+centerOfGravity.xaml;dashboard.xaml;helpPageVehicles.xaml;helpPage_RunTest.xaml;helpPage_Tests.xaml;imageProcessing.xaml;image_processing.xaml;read_from_arduino.xaml;regnr2.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
 
-True
+False
 

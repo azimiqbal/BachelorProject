@@ -27,6 +27,11 @@ namespace VeiebryggeApplication
             InitializeComponent();
         }
 
+        //string med lokasjon til databasen
+        const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True"; //string that connects to the database
+
+
+        //sjekker om bruker har fylt inn i tekstboksene med riktig format
         private bool IsValid()
         {
             if (LocalUsernameBox.Text.TrimStart() == string.Empty)
@@ -42,11 +47,12 @@ namespace VeiebryggeApplication
             return true;
         }
 
+        //knapp for innlogging
         private void LocalLoginButton_Click(object sender, RoutedEventArgs e)
         {
             if (IsValid())
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(dbConnectionString))
                 {
                     string query = "SELECT * FROM USERS WHERE UserName = '" + LocalUsernameBox.Text.Trim() +
                         "' AND Password = '" + LocalPasswordBox.Password.Trim() + "'";
@@ -54,8 +60,10 @@ namespace VeiebryggeApplication
                     SqlDataAdapter sda = new SqlDataAdapter(query, conn);
                     DataTable dta = new DataTable();
                     sda.Fill(dta);
+                    //om brukernavn og passord matcher med en rad i bruker tabellen
                     if (dta.Rows.Count == 1)
                     {
+                        //innlogging er suksessfull og bruker vil bli sendt til index siden
                         NavigationService service = NavigationService.GetNavigationService(this);
                         service.Navigate(new Uri("index.xaml", UriKind.RelativeOrAbsolute));
                     }

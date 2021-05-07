@@ -164,7 +164,7 @@ namespace VeiebryggeApplication
             }
         }
 
-        //Knappen som eksporterer den valgte testen til en ecel fil
+        //Knappen som eksporterer den valgte testen til en excel fil
         private void Export_Button_Click(object sender, RoutedEventArgs e)
         {
             //Sjekker at en test er valgt
