@@ -30,44 +30,55 @@ namespace VeiebryggeApplication
             PopUp.Height = 0;
 
         }
-        const string dbConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security = True";
+        //string med lokasjon til databasen
+        String dbConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\forsvaret.mdf;Integrated Security=True";
 
 
-
+        //knapp som kjører diagnose på systemet
         private void Diagnostics_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Kjører diagnostisk test...");
         }
 
+        //knapp som intialiserer testen
         private void Run_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Starter test...");
         }
 
-
+        //funksjon som vil autofylle tekst om regnr til kjøretøyet finnes i databasen
+        //hvis regnr ikke finnes i databasen, vil det åpnes et pop-up vindu som tilsvarer "regnr.xaml"
         private void regNr_LostFocus(object sender, RoutedEventArgs e)
         {
             try
             {
+                //kobler til databasen
                 SqlConnection conn = new SqlConnection(dbConnectionString);
                 conn.Open();
 
+                //query til databasen der man vdlger alle regnr i databasene
                 string query = "SELECT * FROM Vehicles WHERE regNr=" + int.Parse(regNrText.Text);
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 if (sdr.Read())
                 {
+                    //vis kjøretøy info som tilsvarer det regnr som bruker har skrevet inn
                     outputText.Text = "Navn: " + sdr["vehicleName"].ToString() + "\n Type: " + sdr["type"].ToString() + "\n Årstall: " + sdr["year"].ToString();
                 }
                 else
                 {
+                    //om kjøretøyet ikke finnes i databasen
                     outputText.Text = "Kjøretøy info: Ikke funnet";
-                   PopUp.Height = 400;
+                    PopUp.Height = 900;
+                    //PopUp.Width = 500;
+
+                    //åpne siden kalt regnr
                     PopUp.Content = new regnr();
 
                 }
                 conn.Close();
             }
+            //fanger opp andre feil
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

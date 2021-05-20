@@ -122,15 +122,6 @@ namespace VeiebryggeApplication
             return true;
         }
 
-        private bool IsValid_1()
-        {
-            if (regText.Text.TrimStart() == string.Empty)
-            {
-                MessageBox.Show("Error! Please enter a valid registration number");
-                return false;
-            }
-            return true;
-        }
 
         //Knapp som setter inn dataen fra tekstboksene i databasen
         private void Insert_Button_Click(object sender, RoutedEventArgs e)
@@ -186,12 +177,6 @@ namespace VeiebryggeApplication
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void wheelsText_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
-
         //Funskjon som søker etter om en verdi er i databasen 
         public void searchData(string valuetoSearch)
         {
@@ -209,7 +194,7 @@ namespace VeiebryggeApplication
         //Knapp som sletter objekter fra databasen
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (IsValid_1())
+            if (IsValid())
             {
                 MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil slette dette kjøretøyet ?", "Slett kjøretøy", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
 
@@ -240,7 +225,7 @@ namespace VeiebryggeApplication
         //Knapp som endrer verdiene i databasen på et valgfritt kjøretøy
         private void Edit_Button_Click(object sender, RoutedEventArgs e) //function for editing
         {
-            if (IsValid_1())
+            if (IsValid())
             {
                 SqlConnection conn = new SqlConnection(dbConnectionString);
                 try
@@ -259,8 +244,6 @@ namespace VeiebryggeApplication
 
             }
 
-            if (IsValid())
-            {
                 MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil gjennomføre denne endringen ?", "Endre kjøretøy opplysninger", MessageBoxButton.YesNo); //Displays a selection box to confirm deletion
 
                 switch (result)
@@ -283,9 +266,8 @@ namespace VeiebryggeApplication
                         break;
                     case MessageBoxResult.No:
                         break;
+                    }
                 }
-            }
-        }
 
         //Funksjon som kjører hver gang teksten i registreringsnummer feltet er endret 
         private void regText_TextChanged(object sender, TextChangedEventArgs e) //autocomplete
