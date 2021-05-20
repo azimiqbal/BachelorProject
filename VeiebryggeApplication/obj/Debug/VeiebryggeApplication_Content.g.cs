@@ -8,13 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cv210.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cvaux210.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cxcore210.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("forsvaret.mdf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("forsvaret_log.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("highgui210.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ml210.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("opencvsharp.dll")]
 
 
