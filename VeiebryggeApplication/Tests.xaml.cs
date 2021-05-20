@@ -38,6 +38,7 @@ namespace VeiebryggeApplication
         {
             InitializeComponent();
             FillDataGrid();
+
         }
         //String som alltid holder styr på hvem test som er valgt i datatabellen
         String selectedTest;
@@ -299,7 +300,7 @@ namespace VeiebryggeApplication
 
         private void Report_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            /*
                 PdfDocument document = new PdfDocument();
                 document.Info.Title = "Table Example";
 
@@ -443,11 +444,11 @@ namespace VeiebryggeApplication
                 //SendFileToResponse(bytes, "HelloWorld_test.pdf");
 
             
+            */
 
 
 
-
-            /*
+            
             //Starter kobling til databasen
             SqlConnection conn = new SqlConnection(dbConnectionString);
             conn.Open();
@@ -520,7 +521,7 @@ namespace VeiebryggeApplication
             graph.DrawString("Dato:" + timeRan, font, XBrushes.Black, new XRect(-5, 165, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopRight);
             string pdfFilename = "firstpage.pdf";
             pdf.Save(pdfFilename);
-            Process.Start(pdfFilename);*/
+            Process.Start(pdfFilename);
         }
 
         private void searchTxt_TextChanged(object sender, TextChangedEventArgs e)

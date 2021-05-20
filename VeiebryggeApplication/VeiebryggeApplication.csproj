@@ -147,6 +147,9 @@
     <Compile Include="helpPage_Tests.xaml.cs">
       <DependentUpon>helpPage_Tests.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LidatVisualization.xaml.cs">
+      <DependentUpon>LidatVisualization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="read_from_arduino.xaml.cs">
       <DependentUpon>read_from_arduino.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="helpPage_Tests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LidatVisualization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

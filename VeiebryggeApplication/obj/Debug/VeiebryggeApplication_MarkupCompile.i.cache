@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\obj\Debug\
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\obj\Debug\
 VeiebryggeApplication
 none
 false
 DEBUG;TRACE
-C:\Users\Azim\Documents\GitHub\BachelorProject\VeiebryggeApplication\App.xaml
-151036093519
+C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\App.xaml
+16-511622994
 2561757454
-21-1278128470
-31-2030102177
-centerOfGravity.xaml;dashboard.xaml;helpPageVehicles.xaml;helpPage_RunTest.xaml;helpPage_Tests.xaml;read_from_arduino.xaml;regnr2.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
+22-1628417889
+27785761214
+centerOfGravity.xaml;dashboard.xaml;helpPageVehicles.xaml;helpPage_RunTest.xaml;helpPage_Tests.xaml;LidatVisualization.xaml;read_from_arduino.xaml;regnr2.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
 
 True
 

@@ -1,0 +1,109 @@
+\hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager}{}\doxysection{Veiebrygge\+Application.\+forsvaret\+Data\+Set\+Table\+Adapters.\+Table\+Adapter\+Manager Class Reference}
+\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager}\index{VeiebryggeApplication.forsvaretDataSetTableAdapters.TableAdapterManager@{VeiebryggeApplication.forsvaretDataSetTableAdapters.TableAdapterManager}}
+
+
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager}{Table\+Adapter\+Manager}} is used to coordinate Table\+Adapters in the dataset to enable Hierarchical Update scenarios /summary$>$  
+
+
+Inheritance diagram for Veiebrygge\+Application.\+forsvaret\+Data\+Set\+Table\+Adapters.\+Table\+Adapter\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer}{Self\+Reference\+Comparer}}
+\begin{DoxyCompactList}\small\item\em Used to sort self-\/referenced table\textquotesingle{}s rows /summary$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af1ea5751be80fdb009aaa6c7c08918e0}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af1ea5751be80fdb009aaa6c7c08918e0}} 
+enum class \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af1ea5751be80fdb009aaa6c7c08918e0}{Update\+Order\+Option}} \{ {\bfseries Insert\+Update\+Delete} = 0
+, {\bfseries Update\+Insert\+Delete} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Update Order Option /summary$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a7db8cc16c9882695c425a4c0b62c11bf}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a7db8cc16c9882695c425a4c0b62c11bf}} 
+virtual int \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a7db8cc16c9882695c425a4c0b62c11bf}{Update\+All}} (\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set}{forsvaret\+Data\+Set}} data\+Set)
+\begin{DoxyCompactList}\small\item\em Update all changes to the dataset. /summary$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a3f9853b80939a604bf8dedca26fa9afa}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a3f9853b80939a604bf8dedca26fa9afa}} 
+virtual void {\bfseries Sort\+Self\+Reference\+Rows} (global\+::\+System.\+Data.\+Data\+Row\mbox{[}$\,$\mbox{]} rows, global\+::\+System.\+Data.\+Data\+Relation relation, bool child\+First)
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_abb4e23fa7c598479d073f52a44299902}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_abb4e23fa7c598479d073f52a44299902}} 
+virtual bool {\bfseries Match\+Table\+Adapter\+Connection} (global\+::\+System.\+Data.\+IDb\+Connection input\+Connection)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a778c66fa2ede558552045a487a42f708}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a778c66fa2ede558552045a487a42f708}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af1ea5751be80fdb009aaa6c7c08918e0}{Update\+Order\+Option}} {\bfseries Update\+Order}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_ada930fafa5b218ce20854a4d2c74379c}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_ada930fafa5b218ce20854a4d2c74379c}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_tests_table_adapter}{Tests\+Table\+Adapter}} {\bfseries Tests\+Table\+Adapter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a8f719a71c06bc590a42f96ff6bd787f0}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a8f719a71c06bc590a42f96ff6bd787f0}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_u_s_e_r_s_table_adapter}{USERSTable\+Adapter}} {\bfseries USERSTable\+Adapter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a8fcc29e45f5c60d3d77f3e364786ee9e}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a8fcc29e45f5c60d3d77f3e364786ee9e}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_vehicles_table_adapter}{Vehicles\+Table\+Adapter}} {\bfseries Vehicles\+Table\+Adapter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a6ff8f28994d23d646c72b6645615439d}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a6ff8f28994d23d646c72b6645615439d}} 
+bool {\bfseries Backup\+Data\+Set\+Before\+Update}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a66eab7e266a43a39b544531b043d2c2f}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a66eab7e266a43a39b544531b043d2c2f}} 
+global\+::\+System.\+Data.\+IDb\+Connection {\bfseries Connection}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a343b9933a091d297b41ffc9ee4bb8674}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a343b9933a091d297b41ffc9ee4bb8674}} 
+int {\bfseries Table\+Adapter\+Instance\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_aabf5706a5d0c027cdef2dbc8a402f33e}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_aabf5706a5d0c027cdef2dbc8a402f33e}} 
+int \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_aabf5706a5d0c027cdef2dbc8a402f33e}{Update\+Updated\+Rows}} (\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set}{forsvaret\+Data\+Set}} data\+Set, global\+::\+System.\+Collections.\+Generic.\+List$<$ global\+::\+System.\+Data.\+Data\+Row $>$ all\+Changed\+Rows, global\+::\+System.\+Collections.\+Generic.\+List$<$ global\+::\+System.\+Data.\+Data\+Row $>$ all\+Added\+Rows)
+\begin{DoxyCompactList}\small\item\em Update rows in top-\/down order. /summary$>$ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a36dd72eb9ba8e61f4483de5a8acbaf35}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a36dd72eb9ba8e61f4483de5a8acbaf35}} 
+int \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a36dd72eb9ba8e61f4483de5a8acbaf35}{Update\+Inserted\+Rows}} (\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set}{forsvaret\+Data\+Set}} data\+Set, global\+::\+System.\+Collections.\+Generic.\+List$<$ global\+::\+System.\+Data.\+Data\+Row $>$ all\+Added\+Rows)
+\begin{DoxyCompactList}\small\item\em Insert rows in top-\/down order. /summary$>$ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9061a44b825227591410c95389ee20b5}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9061a44b825227591410c95389ee20b5}} 
+int \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9061a44b825227591410c95389ee20b5}{Update\+Deleted\+Rows}} (\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set}{forsvaret\+Data\+Set}} data\+Set, global\+::\+System.\+Collections.\+Generic.\+List$<$ global\+::\+System.\+Data.\+Data\+Row $>$ all\+Changed\+Rows)
+\begin{DoxyCompactList}\small\item\em Delete rows in bottom-\/up order. /summary$>$ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a91adf726903b8ae9292936e9ea2888b1}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a91adf726903b8ae9292936e9ea2888b1}} 
+global\+::\+System.\+Data.\+Data\+Row\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a91adf726903b8ae9292936e9ea2888b1}{Get\+Real\+Updated\+Rows}} (global\+::\+System.\+Data.\+Data\+Row\mbox{[}$\,$\mbox{]} updated\+Rows, global\+::\+System.\+Collections.\+Generic.\+List$<$ global\+::\+System.\+Data.\+Data\+Row $>$ all\+Added\+Rows)
+\begin{DoxyCompactList}\small\item\em Remove inserted rows that become updated rows after calling Table\+Adapter.\+Update(inserted rows) first /summary$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_ad774144150f942c9add1c79584e2b7ea}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_ad774144150f942c9add1c79584e2b7ea}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af1ea5751be80fdb009aaa6c7c08918e0}{Update\+Order\+Option}} {\bfseries \+\_\+update\+Order}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_ae024fcc1660a829bf83bd355cabbd6ef}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_ae024fcc1660a829bf83bd355cabbd6ef}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_tests_table_adapter}{Tests\+Table\+Adapter}} {\bfseries \+\_\+tests\+Table\+Adapter}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9bc27d21d4cc6b3690f595b27eb5ddb4}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9bc27d21d4cc6b3690f595b27eb5ddb4}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_u_s_e_r_s_table_adapter}{USERSTable\+Adapter}} {\bfseries \+\_\+u\+SERSTable\+Adapter}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9c112bb1e7da2c4df856f22871e93d67}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a9c112bb1e7da2c4df856f22871e93d67}} 
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_vehicles_table_adapter}{Vehicles\+Table\+Adapter}} {\bfseries \+\_\+vehicles\+Table\+Adapter}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af9929e02bd60f3d788f923309065c237}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_af9929e02bd60f3d788f923309065c237}} 
+bool {\bfseries \+\_\+backup\+Data\+Set\+Before\+Update}
+\item 
+\mbox{\Hypertarget{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a2d51826f8ea6537f895098b24e15ee5c}\label{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager_a2d51826f8ea6537f895098b24e15ee5c}} 
+global\+::\+System.\+Data.\+IDb\+Connection {\bfseries \+\_\+connection}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_veiebrygge_application_1_1forsvaret_data_set_table_adapters_1_1_table_adapter_manager}{Table\+Adapter\+Manager}} is used to coordinate Table\+Adapters in the dataset to enable Hierarchical Update scenarios /summary$>$ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/bjobo/source/repos/\+Bachelor\+Project\+GITHUB/\+Veiebrygge\+Application/forsvaret\+Data\+Set.\+Designer.\+cs\end{DoxyCompactItemize}
