@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\bjobo\source\repos\BachelorProjectGITHUB\VeiebryggeApplication\App.xaml
-16-511622994
+11535322746
 2561757454
-22-1628417889
+17-950447821
 26-1699434230
-centerOfGravity.xaml;dashboard.xaml;helpPageVehicles.xaml;helpPage_RunTest.xaml;helpPage_Tests.xaml;LidatVisualization.xaml;read_from_arduino.xaml;regnr2.xaml;write_to_arduino.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
+centerOfGravity.xaml;dashboard.xaml;LidatVisualization.xaml;regnr2.xaml;helpPage.xaml;index.xaml;Login.xaml;MainWindow.xaml;regnr.xaml;RunTest.xaml;Tests.xaml;
 
-False
+True
 

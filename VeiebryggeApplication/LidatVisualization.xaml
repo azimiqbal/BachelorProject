@@ -96,23 +96,29 @@
             <Button x:Name = "btnPoff" Content="Ingen" Style="{StaticResource menuBtn}" Click="pOff_btnCLick" FontSize="12" Background="#FF404040" Width="45"/>
         </StackPanel>
 
-        <Border Background="#FF404040" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" Height="262" VerticalAlignment="Top" Width="195"/>
-        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Kamera kontroll" VerticalAlignment="Top" Foreground="White" Margin="0,11,10,0" FontSize="16" Width="178" TextAlignment="Center" Height="21"/>
-        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Vinkel" VerticalAlignment="Top" Foreground="White" Margin="0,140,16,0" FontSize="16" Width="76" TextAlignment="Center" Height="21"/>
-        <RepeatButton x:Name = "btnRotateUp" Content="Z+" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,167,38,0" VerticalAlignment="Top" Width="30" Click="btnRotateUp_Click"/>
-        <RepeatButton x:Name = "btnRotateDown" Content="Z-" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,223,38,0" VerticalAlignment="Top" Width="30" Click="btnRotateDown_Click"/>
-        <RepeatButton x:Name = "btnRotateRight" Content="X+" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,195,10,0" VerticalAlignment="Top" Width="30" Click="btnRotateRight_Click"/>
-        <RepeatButton x:Name = "btnRotateLeft" Content="X-" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,195,66,0" VerticalAlignment="Top" Width="30" Click="btnRotateLeft_Click"/>
-        <RepeatButton x:Name = "btnPr" Content="Y+" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,157,138,0" VerticalAlignment="Top" Width="30" Click="btnPreset1_Click"/>
-        <RepeatButton x:Name = "btnPdown_Copy1" Content="Y-" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,213,138,0" VerticalAlignment="Top" Width="30" Click="btnPdown_Click"/>
-        <Button x:Name = "btnPreset1" Content="1" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,135,0" VerticalAlignment="Top" Width="30" Click="btnPreset1_Click"/>
-        <Button x:Name = "btnPreset2" Content="2" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,100,0" VerticalAlignment="Top" Width="30" Click="btnPreset2_Click"/>
-        <Button x:Name = "btnPreset3" Content="3" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,65,0" VerticalAlignment="Top" Width="30" Click="btnPreset3_Click"/>
-        <Button x:Name = "btnPreset4" Content="4" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,30,0" VerticalAlignment="Top" Width="30" Click="btnPreset4_Click"/>
+        <Border Background="#FF404040" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" Height="247" VerticalAlignment="Top" Width="160"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Kamera kontroll" VerticalAlignment="Top" Foreground="White" Margin="0,11,-10,0" FontSize="16" Width="178" TextAlignment="Center" Height="21"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Vinkel" VerticalAlignment="Top" Foreground="White" Margin="0,119,42,0" FontSize="16" Width="76" TextAlignment="Center" Height="21"/>
+        <RepeatButton x:Name = "btnRotateUp" Content="Z+" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,146,64,0" VerticalAlignment="Top" Width="30" Click="btnRotateUp_Click"/>
+        <RepeatButton x:Name = "btnRotateDown" Content="Z-" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,202,64,0" VerticalAlignment="Top" Width="30" Click="btnRotateDown_Click"/>
+        <RepeatButton x:Name = "btnRotateRight" Content="X+" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,174,36,0" VerticalAlignment="Top" Width="30" Click="btnRotateRight_Click"/>
+        <RepeatButton x:Name = "btnRotateLeft" Content="X-" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,174,92,0" VerticalAlignment="Top" Width="30" Click="btnRotateLeft_Click"/>
+        <Button x:Name = "btnPreset1" Content="1" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,115,0" VerticalAlignment="Top" Width="30" Click="btnPreset1_Click"/>
+        <Button x:Name = "btnPreset2" Content="2" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,80,0" VerticalAlignment="Top" Width="30" Click="btnPreset2_Click"/>
+        <Button x:Name = "btnPreset3" Content="3" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,45,0" VerticalAlignment="Top" Width="30" Click="btnPreset3_Click"/>
+        <Button x:Name = "btnPreset4" Content="4" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,43,10,0" VerticalAlignment="Top" Width="30" Click="btnPreset4_Click"/>
+
+        <Button x:Name = "btnPreset5" Content="5" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,78,115,0" VerticalAlignment="Top" Width="30" Click="btnPreset1_Click"/>
+        <Button x:Name = "btnPreset6" Content="6" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,78,80,0" VerticalAlignment="Top" Width="30" Click="btnPreset2_Click"/>
+        <Button x:Name = "btnPreset7" Content="7" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,78,45,0" VerticalAlignment="Top" Width="30" Click="btnPreset3_Click"/>
+        <Button x:Name = "btnPreset8" Content="8" Style="{StaticResource menuBtn}" HorizontalAlignment="Right" Margin="0,78,10,0" VerticalAlignment="Top" Width="30" Click="btnPreset4_Click"/>
+
 
         <CheckBox x:Name="PlatformCheck" Content="Platform" HorizontalAlignment="Left" Margin="10,0,0,56" VerticalAlignment="Bottom" Foreground="White" Background="White" BorderBrush="Black" Click="platformToggle" IsChecked="True" FontSize="14" Height="18" Width="73"/>
         <CheckBox x:Name="FootprintCheck" Content="Fotavtryk" HorizontalAlignment="Left" Margin="10,0,0,33" VerticalAlignment="Bottom" Foreground="White" Background="White" BorderBrush="Black" Click="footprintToggle" IsChecked="True" FontSize="14" Height="18" Width="77"/>
         <CheckBox x:Name="VehicleCheck" Content="Kjøretøy" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Foreground="White" Background="White" BorderBrush="Black" Click="vehicleToggle" IsChecked="True" FontSize="14" Height="18" Width="77"/>
+
+        <Button x:Name = "btnConfirm" Content="Bekreft Fotavtrykk" Style="{StaticResource menuBtn}" Click="pOff_btnCLick" FontSize="12" Background="#FF404040" Width="120" Margin="0,0,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Page>

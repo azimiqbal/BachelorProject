@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO.Ports;
 
 
 
@@ -24,6 +25,7 @@ namespace VeiebryggeApplication
     /// </summary>
     public partial class RunTest : Page
     {
+        SerialPort sp = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
         public RunTest()
         {
             InitializeComponent();
@@ -43,8 +45,46 @@ namespace VeiebryggeApplication
         //knapp som intialiserer testen
         private void Run_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Starter test...");
+            //MessageBox.Show("Starter test...");
+
+            try
+            {
+                sp.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
+
+                sp.Open();
+                MessageBox.Show("Connected");
+
+                sp.Write("1");
+                //Console.Read();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please give a valid port number or check your connection");
+            }
+            /*
+            try
+            {
+                sp.Close();
+                MessageBox.Show("Disonnected");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("First Connect and then disconnect");
+            }*/
         }
+
+        private void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            //Write the serial port data to the console.
+
+            string x = sp.ReadExisting();
+
+            Console.Write(x);
+
+        }
+
 
         //funksjon som vil autofylle tekst om regnr til kjøretøyet finnes i databasen
         //hvis regnr ikke finnes i databasen, vil det åpnes et pop-up vindu som tilsvarer "regnr.xaml"
