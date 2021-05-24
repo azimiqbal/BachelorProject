@@ -101,6 +101,9 @@
     <Compile Include="regnr2.xaml.cs">
       <DependentUpon>regnr2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="rolloverAngle.xaml.cs">
+      <DependentUpon>rolloverAngle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="write_to_arduino.xaml.cs">
       <DependentUpon>write_to_arduino.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="regnr2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="rolloverAngle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
