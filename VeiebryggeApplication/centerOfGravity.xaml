@@ -6,42 +6,42 @@
       xmlns:local="clr-namespace:VeiebryggeApplication"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="centerOfGravity" Background="White">
+      Title="centerOfGravity" Background="#FF404040">
 
     <Grid Margin="0,0,2,-21">
         <Button x:Name="buttonCalculate" Content="Calculate y-axis" HorizontalAlignment="Left" Margin="110,331,0,0" VerticalAlignment="Top" Width="89" Click="Button_ClickY"/>
         <TextBox x:Name="textBoxYA" HorizontalAlignment="Left" Height="23" Margin="555,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelYA" Content="y__A" HorizontalAlignment="Left" Margin="505,43,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="labelYA" Content="y__A" Foreground="white" HorizontalAlignment="Left" Margin="505,43,0,0" VerticalAlignment="Top" Width="64"/>
         <TextBox x:Name="textBoxYB" HorizontalAlignment="Left" Height="23" Margin="555,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelYB" Content="y__B" HorizontalAlignment="Left" Margin="507,87,0,0" VerticalAlignment="Top" Width="63"/>
+        <Label x:Name="labelYB" Content="y__B" Foreground="white" HorizontalAlignment="Left" Margin="507,87,0,0" VerticalAlignment="Top" Width="63"/>
         <TextBox x:Name="textBoxMA" HorizontalAlignment="Left" Height="23" Margin="330,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelMA" Content="M__A" HorizontalAlignment="Left" Margin="276,39,0,0" VerticalAlignment="Top" Width="49"/>
+        <Label x:Name="labelMA" Content="M__A" Foreground="white" HorizontalAlignment="Left" Margin="276,39,0,0" VerticalAlignment="Top" Width="49"/>
         <TextBox x:Name="textBoxMB" HorizontalAlignment="Left" Height="23" Margin="330,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelMB" Content="M__B" HorizontalAlignment="Left" Margin="278,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.667,-3.231" Width="49"/>
+        <Label x:Name="labelMB" Content="M__B" Foreground="white" HorizontalAlignment="Left" Margin="278,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.667,-3.231" Width="49"/>
         <TextBox x:Name="textBoxMVehicle" HorizontalAlignment="Left" Height="23" Margin="555,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelMVehicle" Content="M__Vehicle" HorizontalAlignment="Left" Margin="452,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.111,0.5"/>
+        <Label x:Name="labelMVehicle" Content="M__Vehicle" Foreground="white" HorizontalAlignment="Left" Margin="452,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.111,0.5"/>
         <TextBox x:Name="textBoxAlpha" HorizontalAlignment="Left" Height="23" Margin="278,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelAlpha" Content="Alpha" HorizontalAlignment="Left" Margin="194,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelAlpha" Content="Alpha" Foreground="white" HorizontalAlignment="Left" Margin="194,157,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBoxYVehicle" HorizontalAlignment="Left" Height="23" Margin="330,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelYVehicle" Content="Y-axis" HorizontalAlignment="Left" Margin="250,328,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelYVehicle" Content="Y-axis" Foreground="white" HorizontalAlignment="Left" Margin="250,328,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBoxZVehicle" HorizontalAlignment="Left" Height="23" Margin="330,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelZVehicle" Content="Z-axis" HorizontalAlignment="Left" Margin="250,374,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelZVehicle" Content="Z-axis" Foreground="white" HorizontalAlignment="Left" Margin="250,374,0,0" VerticalAlignment="Top"/>
         <Button x:Name="buttonCalculate_Copy" Content="Calculate z-axis" HorizontalAlignment="Left" Margin="108,380,0,0" VerticalAlignment="Top" Width="92" Click="Button_ClickZ"/>
         <TextBox x:Name="textBoxYVehicle_value" HorizontalAlignment="Left" Height="23" Margin="280,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelAlpha_Copy" Content="y_Vehicle" HorizontalAlignment="Left" Margin="190,202,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelAlpha_Copy" Content="y_Vehicle" Foreground="white" HorizontalAlignment="Left" Margin="190,202,0,0" VerticalAlignment="Top"/>
         
         <TextBox x:Name="textBoxMC" HorizontalAlignment="Left" Height="23" Margin="330,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelMC" Content="M__C" HorizontalAlignment="Left" Margin="278,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.667,-3.231" Width="49"/>
+        <Label x:Name="labelMC" Content="M__C" Foreground="white" HorizontalAlignment="Left" Margin="278,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.667,-3.231" Width="49"/>
         <TextBox x:Name="textBoxXA" HorizontalAlignment="Left" Height="23" Margin="135,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelXA" Content="X__A" HorizontalAlignment="Left" Margin="93,43,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="labelXA" Content="X__A" HorizontalAlignment="Left" Margin="93,43,0,0" VerticalAlignment="Top" Width="64" Foreground="white"/>
         <TextBox x:Name="textBoxXB" HorizontalAlignment="Left" Height="23" Margin="135,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxXC" HorizontalAlignment="Left" Height="23" Margin="135,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelXC" Content="X__C" HorizontalAlignment="Left" Margin="93,113,0,0" VerticalAlignment="Top" Width="64"/>
-        <Label x:Name="labelXB" Content="X__B" HorizontalAlignment="Left" Margin="93,79,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="labelXC" Content="X__C" HorizontalAlignment="Left" Margin="93,113,0,0" VerticalAlignment="Top" Width="64" Foreground="white"/>
+        <Label x:Name="labelXB" Content="X__B" HorizontalAlignment="Left" Margin="93,79,0,0" VerticalAlignment="Top" Width="64" Foreground="white"/>
 
         <Button x:Name="buttonCalculate_Copy2" Content="Calculate x-axis" HorizontalAlignment="Left" Margin="110,283,0,0" VerticalAlignment="Top" Width="89" Click="Button_ClickX"/>
         <TextBox x:Name="textBoxXVehicle" HorizontalAlignment="Left" Height="23" Margin="330,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelXVehicle" Content="X-axis" HorizontalAlignment="Left" Margin="250,279,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelXVehicle" Content="X-axis" HorizontalAlignment="Left" Margin="250,279,0,0" VerticalAlignment="Top" Foreground="white"/>
 
 
 

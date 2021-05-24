@@ -1,28 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\VeiebryggeApplication\\VeiebryggeApplication.csproj": {}
+    "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\VeiebryggeApplication\\VeiebryggeApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\VeiebryggeApplication\\VeiebryggeApplication.csproj": {
+    "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\VeiebryggeApplication\\VeiebryggeApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\VeiebryggeApplication\\VeiebryggeApplication.csproj",
+        "projectUniqueName": "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\VeiebryggeApplication\\VeiebryggeApplication.csproj",
         "projectName": "VeiebryggeApplication",
-        "projectPath": "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\VeiebryggeApplication\\VeiebryggeApplication.csproj",
-        "packagesPath": "C:\\Users\\bjobo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bjobo\\source\\repos\\BachelorProjectGITHUB\\VeiebryggeApplication\\obj\\",
+        "projectPath": "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\VeiebryggeApplication\\VeiebryggeApplication.csproj",
+        "packagesPath": "C:\\Users\\Azim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Azim\\Documents\\GitHub\\BachelorProject\\VeiebryggeApplication\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bjobo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Azim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
